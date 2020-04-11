@@ -7,28 +7,19 @@ import Youtube from "../../assets/img/youtube.png";
 import './navbar.scss';
 
 const NavBar = () => (
-    <div class="w3-bar w3-border w3-light-grey">
-    <a href="#" class="w3-bar-item w3-button">Home</a>
-    <a href="#" class="w3-bar-item w3-button">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-green w3-right">Link 3</a>
+    <div class="w3-bar w3-border w3-black">
+    <div className="w3-bar-item"><div className="logo"><img className="logo-image" src={Logo} /></div></div>
+    <div ><a href="#" class="w3-bar-item" id="nav-links">HOME</a></div>
+    <div ><a href="#" class="w3-bar-item" id="nav-links">TOURNAMENTS</a></div>
+    <div ><a href="#" class="w3-bar-item" id="nav-links">MATCH SCHEDULES</a></div>
+    <div ><a href="#" class="w3-bar-item" id="nav-links">NEWS</a></div>
+    <div ><a href="#" class="w3-bar-item" id="nav-links">ABOUT</a></div>
+    <div><a href="#" class="w3-bar-item w3-button w3-right" id="nav-button">SIGN IN</a></div>
+    <div><a href="#" class="w3-bar-item w3-right"><img src={Instagram} /></a></div>
+    <div><a href="#" class="w3-bar-item w3-right"><img src={Twitter} /></a></div>
+    <div><a href="#" class="w3-bar-item w3-right"><img src={Youtube} /></a></div>
+    <div><a href="#" class="w3-bar-item w3-right"><img src={Facebook} /></a></div>
     </div>
-    // <nav className="w3-bar">
-    //   <div className="left-nav">
-    //     <div><img src={Logo} /></div>
-    //     <div>Home</div>
-    //     <div>Tournaments</div>
-    //     <div>Match Schedule</div>
-    //     <div>About</div>
-    //   </div>
-    //   <div className="right-nav">
-    //     <div>Sign In / Sign Up</div>
-    //     <div><img src={Instagram} /></div>
-    //     <div><img src={Twitter} /></div>
-    //     <div><img src={Youtube} /></div>
-    //     <div><img src={Facebook} /></div>
-    //   </div>
-    // </nav>
   )
 
 export default NavBar;
