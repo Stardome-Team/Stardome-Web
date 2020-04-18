@@ -7,7 +7,7 @@ import Youtube from "../../assets/img/youtube.png";
 import './navbar.scss';
 
 const NavBar = () => (
-    <div class="w3-bar w3-border w3-black">
+    <div class="w3-container w3-bar w3-black">
     <div className="w3-bar-item"><div className="logo"><img className="logo-image" src={Logo} /></div></div>
     <div ><a href="#" class="w3-bar-item" id="nav-links">HOME</a></div>
     <div ><a href="#" class="w3-bar-item" id="nav-links">TOURNAMENTS</a></div>
