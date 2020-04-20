@@ -1,0 +1,19 @@
+.ListBlock
+{
+    list-style-type: none;
+    padding-inline-start: 16px;
+    margin: 12px auto;
+}
+
+.ListBlock li
+{
+    margin: 2px auto;
+    font-size: 1.2rem;
+}
+
+.ListBlock a
+{
+    text-decoration: none;
+    color:rgba(255, 255, 255, 0.7);
+
+}
