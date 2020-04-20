@@ -6,7 +6,7 @@ import HomePageCarousel from '../../components/homePageCarousel/homepagecarousel
 import Footer from '../../components/footer/footer'
 
 const HomePage = () => (
-  <div>
+  <div className="homepage">
     <NavBar/>
     <HomePageCarousel/>
     <TwitterFeed/>
