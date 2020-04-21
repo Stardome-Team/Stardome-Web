@@ -1,1 +1,10 @@
-//scss is  a little different from the normal css, it makes stuff easier
+.midsection{
+    display: flex;
+    flex-direction: row;
+}
+.newsfeed{
+    width: 70%;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
