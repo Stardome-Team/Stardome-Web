@@ -9,17 +9,25 @@ import TwitterFeed from '../../components/twitterFeed/twitterFeed'
 
 function NewsFeed () {
   let picArr = [<ImgComp src={feed}/>,<ImgComp src={feed1}/>,<ImgComp src={feed2}/>,<ImgComp src={feed3}/>];
+  let infoArr = ['']
   return (
     <div className="midsection">
       <TwitterFeed/>
       <div className="newsfeed"> 
         {picArr.map((item, index) => {
                   return(
-                      <div key={index}>
-                          {item}
+                      <div key={index} className="feed-content">
+                        {item}
+                        <div className="feed-header">
+                          <div></div>
+                          Call of Duty: Lagos Regionals 2020
+                          <div className="feed-preamble">
+                            The knock out selections have been made for the regionals, fixture dates will son be released.
+                          </div>
+                        </div>
                       </div>
                   )
-              })}
+              })}              
       </div>
     </div>
   );
