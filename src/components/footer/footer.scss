@@ -1,0 +1,56 @@
+.footer-bottom {
+    position: relative;
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+    color: #c4c4c4;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 150px; /* you can use % */
+        height: auto;
+        
+      }
+}
+
+.copyright-statement{
+    font-size: 18px;
+    margin: 10px 0 10px 0;
+}
+
+.footer-section{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    font-family: Roboto Condensed;
+    margin: 30px 0 30px 0;
+}
+
+.section1{
+    width: fit-content;
+    text-align: left;
+    color: #C4C4C4;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-header{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section-list{ 
+    font-size: 18px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 300;  
+    color: #C4C4C4;
+}
