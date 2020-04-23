@@ -32,7 +32,7 @@ class NavBar extends Component {
         <div ><a href="#" class="w3-bar-item" id="nav-links">HOME</a></div>
         <div ><a href="#" class="w3-bar-item" id="nav-links">TOURNAMENTS</a></div>
         <div ><a href="#" class="w3-bar-item" id="nav-links">MATCH SCHEDULES</a></div>
-        <div ><a href="#" class="w3-bar-item" id="nav-links">NEWS</a></div>
+        <div ><a href="../pages/newspage/newspage" class="w3-bar-item" id="nav-links">NEWS</a></div>
         <div ><a href="#" class="w3-bar-item" id="nav-links">ABOUT</a></div>
         <div><a href="#" class="w3-bar-item w3-button w3-right" id="nav-button">SIGN IN</a></div>
         <div><a href="#" class="w3-bar-item w3-right"><img src={Instagram} /></a></div>
