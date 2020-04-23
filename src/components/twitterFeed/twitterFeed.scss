@@ -7,3 +7,9 @@
     width: 30%;
     padding: 10px 10px 0 10px;
   }
+
+  @media only screen and (max-width: 960px) {
+    .tweet-section{
+        display: none;
+    }
+}

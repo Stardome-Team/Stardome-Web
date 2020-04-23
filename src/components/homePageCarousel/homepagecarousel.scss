@@ -31,7 +31,7 @@
     border: none;
     outline: none;
     transition: 0.5s;
-    &:hover{
+    &:hover{ 
         background: rgba(0,0,0,0.356);
         cursor: pointer;
         i {
@@ -48,4 +48,10 @@
 #goRight{
     right: 0;
     @extend %btn-styles
+}
+
+@media only screen and (max-width: 960px) {
+    .slider{
+        height: 100%;
+    }
 }

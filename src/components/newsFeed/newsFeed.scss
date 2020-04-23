@@ -41,3 +41,9 @@
     font-weight: 100;
     font-size: 18px;
 }
+
+@media only screen and (max-width: 768px) {
+    .feed-header{
+        padding: 20px 10px 20px 20px;
+    }
+}
