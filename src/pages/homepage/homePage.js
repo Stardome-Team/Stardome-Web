@@ -1,14 +1,16 @@
 import React from 'react';
 import './homePage.scss';
-import NavBar from '../../components/navbar/navbar'
-import TwitterFeed from '../../components/twitterFeed/twitterFeed'
-import HomePageCarousel from '../../components/homePageCarousel/homepagecarousel'
+import Forms from "../SignUpLogin/forms";
+import NavBar from '../../components/navbar/navbar';
+import TwitterFeed from '../../components/twitterFeed/twitterFeed';
+import HomePageCarousel from '../../components/homePageCarousel/homepagecarousel';
 
 const HomePage = () => (
   <div className="homepage">
-    <NavBar/>
-    <HomePageCarousel/>
-    <TwitterFeed/>
+    <Forms />
+    {/* <NavBar/>
+    <HomePageCarousel/> */}
+    {/* <TwitterFeed/> */}
   </div>
   );
 
