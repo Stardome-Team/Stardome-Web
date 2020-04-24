@@ -1,5 +1,6 @@
 import React from 'react';
 import './navbar.scss';
+import {Link} from 'react-router-dom';
 
 function SideBar(){
   return (
@@ -14,10 +15,18 @@ function SideBar(){
           </button>
         </div> */}
         <div style={{width: "100%", marginLeft: "auto", marginRight: "auto"}}><a href="#" class="w3-bar-item w3-button w3-right" style={{marginTop: 15+"px", marginBottom: 15+"px"}} id="sidebar-button">SIGN IN</a></div>
-        <div ><a href="#" class="w3-bar-item" id="sidebar-nav-links">HOME</a></div>
+        <Link style={{textDecoration: 'none'}} to="/">
+          <div >
+              <a href="" class="w3-bar-item" id="nav-links">HOME</a>
+          </div>
+        </Link>
         <div ><a href="#" class="w3-bar-item" id="sidebar-nav-links">TOURNAMENTS</a></div>
         <div ><a href="#" class="w3-bar-item" id="sidebar-nav-links">MATCH SCHEDULES</a></div>
-        <div ><a href="#" class="w3-bar-item" id="sidebar-nav-links">NEWS</a></div>
+        <Link style={{textDecoration: 'none'}} to="/news">
+          <div >
+              <a href="" class="w3-bar-item" id="nav-links">NEWS</a>
+          </div>
+        </Link>
         <div ><a href="#" class="w3-bar-item" id="sidebar-nav-links">ABOUT</a></div>
       </div>
       </div>
