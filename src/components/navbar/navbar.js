@@ -8,6 +8,7 @@ import Youtube from "../../assets/img/youtube.png";
 import SideBar from './sideBar'
 import './navbar.scss';
 
+
 class NavBar extends Component {
   constructor() {
     super();
