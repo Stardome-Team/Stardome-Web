@@ -12,12 +12,10 @@ import newsPage from './pages/newspage/newspage'
 
 function App() {
   return(
-    <Router>
       <Switch>
-        <Route path = "/" exact component = {HomePage}></Route>
-        <Route path = "./pages/newspage/newspage" component = {newsPage}></Route>
+        <Route exact path = "/" component={HomePage}/>
+        <Route path = "/news" component={newsPage}/>
       </Switch>
-    </Router>
   );
 }
 

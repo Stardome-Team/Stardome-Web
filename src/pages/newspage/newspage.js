@@ -8,8 +8,6 @@ import NewsFeed from '../../components/newsFeed/newsFeed'
 const newsPage = () => (
   <div className="newspage">
     <NavBar/>
-
-    <TwitterFeed/>
     <NewsFeed/>
     <Footer/>
   </div>
