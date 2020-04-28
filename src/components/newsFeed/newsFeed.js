@@ -1,15 +1,35 @@
 import React from 'react';
-import './App.css';
+import './newsFeed.scss'
 import ImgComp from './ImgComp';
-import feed1 from '../../assets/img/feed1';
-import feed2 from '../../assets/img/feed2';
-import feed3 from '../../assets/img/feed3';
-import feed4 from '../../assets/img/feed4';
+import feed from '../../assets/img/feed.png';
+import feed1 from '../../assets/img/feed1.png';
+import feed2 from '../../assets/img/feed2.png';
+import feed3 from '../../assets/img/feed3.png';
+import TwitterFeed from '../../components/twitterFeed/twitterFeed'
 
 function NewsFeed () {
-  let picArr = [<ImgComp src={feed1}/>,<ImgComp src={feed2}/>,<ImgComp src={feed3}/>,<ImgComp src={feed4}/>];
+  let picArr = [<ImgComp src={feed}/>,<ImgComp src={feed1}/>,<ImgComp src={feed2}/>,<ImgComp src={feed3}/>];
+  let infoArr = ['']
   return (
-    <div></div>
+    <div className="midsection">
+      <TwitterFeed/>
+      <div className="newsfeed"> 
+        {picArr.map((item, index) => {
+                  return(
+                      <div key={index} className="feed-content">
+                        {item}
+                        <div className="feed-header">
+                          <div></div>
+                          Call of Duty: Lagos Regionals 2020
+                          <div className="feed-preamble">
+                            The knock out selections have been made for the regionals, fixture dates will son be released.
+                          </div>
+                        </div>
+                      </div>
+                  )
+              })}              
+      </div>
+    </div>
   );
 }
 

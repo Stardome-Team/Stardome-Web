@@ -54,3 +54,9 @@
     font-weight: 300;  
     color: #C4C4C4;
 }
+
+@media only screen and (max-width: 540px) {
+    .footer-section{
+        display: none;
+    }
+}

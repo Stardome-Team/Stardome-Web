@@ -1,12 +1,19 @@
 import React from 'react';
-import Component from 'react-dom'
+import {Switch, Route} from 'react-router-dom';
 import './App.css';
-import HomePage from './pages/homepage/homePage'
+import HomePage from './pages/homepage/homePage';
+import newsPage from './pages/newspage/newspage';
+import SignUpLogin from "./pages/SignUpLogin/forms";
 
-const App = () => ( 
-      <div>
-        <HomePage/>
-      </div>
-)
+
+function App() {
+  return(
+      <Switch>
+        <Route exact path = "/" component={HomePage}/>
+        <Route path = "/news" component={newsPage}/>
+        <Route path = "/auth" component={SignUpLogin}/>
+      </Switch>
+  );
+}
 
 export default App;
