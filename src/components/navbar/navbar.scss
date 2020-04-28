@@ -1,3 +1,7 @@
+.z-index
+{
+    z-index: 999;
+}
 .navbar {
     display: inline-block;
 }
@@ -42,4 +46,14 @@
     text-decoration: none;
     font-family: Trebuchet MS;
     text-align: center;
+}
+
+#mySidebar .w3-bar-item
+{
+    text-align: center;
+}
+
+.move-nav
+{
+    margin-top: 16px;
 }

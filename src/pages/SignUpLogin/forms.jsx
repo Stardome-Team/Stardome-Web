@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styles from "./forms.module.css";
+import NavBar from '../../components/navbar/navbar';
 
 class Forms extends Component {
   constructor(props) {
@@ -30,6 +31,8 @@ class Forms extends Component {
     const { signIn, signUp } = this.state;
 
     return (
+      <>
+      <NavBar />
       <div className={styles.Forms}>
         {signUp && (
           <div className={styles.container} id="container">
@@ -131,6 +134,7 @@ class Forms extends Component {
           </div>
         )}
       </div>
+    </>
     );
   }
 }

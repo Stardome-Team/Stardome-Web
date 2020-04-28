@@ -4,14 +4,14 @@
 .Forms
 {
 	position: relative;
-	background: #f6f5f7;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
-	margin: -20px 0 0;
+	width: 90vw;
+    margin: 30px auto;
+
 }
 
 
@@ -279,4 +279,22 @@
 		{
 			padding: 6px 20px;
 		}
+}
+
+@media screen and (max-width:699px)
+{
+	.Forms
+	{
+		transform: translateY(20px);
+	}
+}
+
+
+@media screen and (min-width:699px) and (max-width:992px)
+{
+	.Forms
+	{		
+		transform: translate(-28px,35px);
+	}
+
 }

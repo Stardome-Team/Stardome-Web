@@ -27,78 +27,62 @@ class NavBar extends Component {
   render() {
     const {showHideSidebar} = this.state;
     return (
-      <div>
-        <div class="w3-container w3-hide-medium w3-hide-small w3-bar w3-black">
+      <div className="z-index nav-collection">
+        <div className="w3-container w3-hide-medium w3-hide-small w3-bar w3-black">
           <div className="w3-bar-item">
             <div className="logo">
               <img className="logo-image" src={Logo} alt="Logo of stardome" />
             </div>
           </div>
-          <Link style={{ textDecoration: "none" }} to="/">
-            <div>
-              <a href="" class="w3-bar-item" id="nav-links">
-                HOME
-              </a>
-            </div>
+
+         
+          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/">
+          HOME
           </Link>
-          <div>
-            <a href="" class="w3-bar-item" id="nav-links">
-              TOURNAMENTS
-            </a>
-          </div>
-          <div>
-            <a href="" class="w3-bar-item" id="nav-links">
-              MATCH SCHEDULES
-            </a>
-          </div>
-          <Link style={{ textDecoration: "none" }} to="/news">
-            <div>
-              <a href="" class="w3-bar-item" id="nav-links">
-                NEWS
-              </a>
-            </div>
+
+          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/">
+          TOURNAMENTS
           </Link>
-          <div>
-            <a href="#" class="w3-bar-item" id="nav-links">
-              ABOUT
-            </a>
-          </div>
-            <Link  id="nav-button" className="w3-bar-item w3-button w3-right" to="/auth">SIGN IN</Link>
-          <div>
-            <a href="#" class="w3-bar-item w3-right">
-              <img src={Instagram} />
-            </a>
-          </div>
-          <div>
-            <a href="#" class="w3-bar-item w3-right">
-              <img src={Twitter} />
-            </a>
-          </div>
-          <div>
-            <a href="#" class="w3-bar-item w3-right">
-              <img src={Youtube} />
-            </a>
-          </div>
-          <div>
-            <a href="#" class="w3-bar-item w3-right">
-              <img src={Facebook} />
-            </a>
-          </div>
+
+          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/">
+          MATCH SCHEDULES
+          </Link>
+        
+          
+          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/news">
+          NEWS
+          </Link>
+
+          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/news">
+          ABOUT
+          </Link>
+         
+            <Link id="nav-button" className="w3-bar-item w3-button w3-right" to="/auth">SIGN IN</Link>
+
+            <Link to="/"  className="w3-bar-item w3-button w3-right" > <img alt="instagram logo" src={Instagram} /></Link>
+            <Link className="w3-bar-item w3-button w3-right" to="/auth"> <img alt="twitter logo" src={Twitter} /></Link>
+
+            <Link className="w3-bar-item w3-button w3-right" to="/auth"> <img alt="Youtube logo" src={Youtube} /></Link>
+
+            <Link className="w3-bar-item w3-button w3-right" to="/auth"> <img alt="Facebook logo" src={Facebook} /></Link>
+
+         
         </div>
-        <div class="w3-main w3-hide-large">
+        <div className="w3-main w3-hide-large">
           {showHideSidebar && <SideBar />}
           <div className="w3-bar-item w3-left">
             <div className="logo" style={{ margin: "0 0 0 20px" }}>
               <img className="logo-image" src={Logo} />
             </div>
           </div>
-          <div class="w3-black w3-right">
+          <div className="w3-black w3-right ">
             <div
               style={{
                 color: "#457FFF",
                 fontSize: "xx-large",
                 paddingRight: 20 + "px",
                 textDecoration: "none",
+                paddingLeft: "18px"
               }}
             >
               <a
@@ -106,7 +90,7 @@ class NavBar extends Component {
                 onClick={() => this.hideComponent("showHideSidebar")}
                 style={{ textDecoration: "none" }}
               >
-                <i class="fas fa-bars"></i>
+                <i className="fas fa-bars"></i>
               </a>
             </div>
           </div>
