@@ -14,7 +14,9 @@
 
 }
 
-
+.bg{
+	background: #000000;
+}
 
 .Forms h1 {
 	font-weight: bold;
@@ -46,8 +48,8 @@
 
 .Forms button {
 	border-radius: 20px;
-	border: 1px solid #73C6F5;
-	background-color: #73C6F5;
+	border: 1px solid #457FFF;
+	background-color: #457FFF;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -174,9 +176,9 @@
 }
 
 .overlay {
-	background: #73C6F5;
-	background: -webkit-linear-gradient(to right, #73C6F5, #73C6F9);
-	background: linear-gradient(to right, #73C6F5, #73C6F9);
+	background: #457FFF;
+	background: -webkit-linear-gradient(to right, #457FFF, #457FFF);
+	background: linear-gradient(to right, #457FFF, #457FFF);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -294,7 +296,7 @@
 {
 	.Forms
 	{		
-		transform: translate(-28px,35px);
+		/* transform: translate(-28px,35px); */
 	}
 
 }
