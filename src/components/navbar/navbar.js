@@ -31,7 +31,7 @@ class NavBar extends Component {
         <div class="w3-container w3-hide-medium w3-hide-small w3-bar w3-black">
           <div className="w3-bar-item">
             <div className="logo">
-              <img className="logo-image" src={Logo} />
+              <img className="logo-image" src={Logo} alt="Logo of stardome" />
             </div>
           </div>
           <Link style={{ textDecoration: "none" }} to="/">
