@@ -8,7 +8,7 @@ function SideBar() {
       <div className="hidden-sidebar " id="hidden-sidebar ">
         <div
           className="w3-sidebar w3-bar-block w3-hide-large w3-card w3-animate-right w3-black z-index"
-          style={{ width: "40%", right: 0, top: 50 + "px" }}
+          style={{ width: "75vw", right: 0, top: 46 + "px" , maxWidth:"280px" }}
           id="mySidebar"
         >
           <div
