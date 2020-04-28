@@ -1,19 +1,17 @@
 import React from 'react';
-import './homePage.scss';
+import './newspage.scss';
 import NavBar from '../../components/navbar/navbar'
 import TwitterFeed from '../../components/twitterFeed/twitterFeed'
-import HomePageCarousel from '../../components/homePageCarousel/homepagecarousel'
 import Footer from '../../components/footer/footer'
 import NewsFeed from '../../components/newsFeed/newsFeed'
 
-const HomePage = () => (
-  <div className="homepage">
+const newsPage = () => (
+  <div className="newspage">
     <NavBar/>
-    <HomePageCarousel/>
     {/* <TwitterFeed/> */}
     <NewsFeed/>
     <Footer/>
   </div>
   );
 
-export default HomePage;
+export default newsPage;
