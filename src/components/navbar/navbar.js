@@ -64,7 +64,7 @@ class NavBar extends Component {
 
             <Link className="w3-bar-item w3-button w3-right" to="/auth"> <img alt="Youtube logo" src={Youtube} /></Link>
 
-            <Link className="w3-bar-item w3-button w3-right" to="/auth"> <img alt="Facebook logo" src={Facebook} /></Link>
+            {/* <Link className="w3-bar-item w3-button w3-right" to="/auth"> <img alt="Facebook logo" src={Facebook} /></Link> */}
 
          
         </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./forms.module.css";
 import NavBar from '../../components/navbar/navbar';
+import Footer from '../../components/footer/footer'
 
 class Forms extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Forms extends Component {
     const { signIn, signUp } = this.state;
 
     return (
-      <>
+      <div className={styles.bg}>
       <NavBar />
       <div className={styles.Forms}>
         {signUp && (
@@ -134,7 +135,8 @@ class Forms extends Component {
           </div>
         )}
       </div>
-    </>
+      <Footer />
+    </div>
     );
   }
 }
