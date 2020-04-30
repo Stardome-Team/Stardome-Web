@@ -62,8 +62,8 @@
     &.event{
         border-left: 2px solid #EC4E20;
         padding: 10px;
+        font-size: 24px;
         font-family: Roboto Condensed;
-        font-size: 20px;   
         justify-content: center;
         align-items: center;
     }
@@ -84,5 +84,64 @@
 @media only screen and (max-width: 992px) {
     .container{
         margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 1086px) {
+    .daily-schedule{
+        &.date{
+            padding: 5px 10px 5px 10px;
+            &.other{
+                margin-left: -10px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 984px) {
+    .daily-schedule{
+        &.date{
+            &.day{
+                font-size: xx-large;
+            }
+            &.other{
+                font-size: large;
+            }
+        }
+        &.event{
+            font-size: large;
+        }
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .daily-schedule{
+        &.date{
+            &.day{
+                font-size: x-large;
+            }
+            &.other{
+                font-size: large;
+            }
+        }
+        &.event{
+            font-size: medium;
+        }
+    }
+}
+
+@media only screen and (max-width: 569px) {
+    .daily-schedule{
+        &.date{
+            &.day{
+                font-size: large;
+            }
+            &.other{
+                font-size: medium;
+            }
+        }
+        &.event{
+            font-size: small;
+        }
     }
 }

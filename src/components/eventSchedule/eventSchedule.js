@@ -4,21 +4,27 @@ import './eventSchedule.scss'
 class EventSchedule extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: 0};
-        this.buttonClicked = this.buttonClicked.bind(this);
+        this.state = {value: 10};
+        this.incrementWeekClicked = this.incrementWeekClicked.bind(this);
+        this.decrementWeekClicked = this.decrementWeekClicked.bind(this);
       }
       
-      buttonClicked(event) {
+      incrementWeekClicked(event) {
         this.setState({value: this.state.value+1});
+      }
+
+      decrementWeekClicked(event) {
+        this.setState({value: this.state.value-1});
       }
       
     render() {
+    const {value} = this.state;
     return (      
     <div className="container">
         <div className="week-counter">
-            <i style={{fontSize: "xxx-large"}} onClick={this.buttonClicked} class="fas fa-caret-left"></i>
-                <div className="week-counter display">Week 18</div>
-            <i style={{fontSize: "xxx-large"}} onClick={this.buttonClicked} class="fas fa-caret-right"></i>
+            <i style={{fontSize: "xxx-large"}} onClick={this.decrementWeekClicked} class="fas fa-caret-left"></i>
+                <div className="week-counter display">Week {this.state.value}</div>
+            <i style={{fontSize: "xxx-large"}} onClick={this.incrementWeekClicked} class="fas fa-caret-right"></i>
         </div>
 
         <div id="schedule" className="daily-schedule">
