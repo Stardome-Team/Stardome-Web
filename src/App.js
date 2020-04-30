@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './pages/homepage/homePage';
 import newsPage from './pages/newspage/newspage';
 import SignUpLogin from "./pages/SignUpLogin/forms";
+import TournamentPage from './pages/tournaments/tournament';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route exact path = "/" component={HomePage}/>
         <Route path = "/news" component={newsPage}/>
         <Route path = "/auth" component={SignUpLogin}/>
+        <Route path = "/events" component={TournamentPage}/>
       </Switch>
   );
 }

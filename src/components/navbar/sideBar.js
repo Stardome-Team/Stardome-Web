@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function SideBar() {
   return (
     <div>
-      <div className="hidden-sidebar " id="hidden-sidebar ">
+      <div className="w3-top hidden-sidebar " id="hidden-sidebar ">
         <div
           className="w3-sidebar w3-bar-block w3-hide-large w3-card w3-animate-right w3-black z-index"
           style={{ width: "75vw", right: 0, top: 46 + "px" , maxWidth:"280px" }}
