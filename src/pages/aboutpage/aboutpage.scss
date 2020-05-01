@@ -1,0 +1,28 @@
+body {
+    background-image: url("../../assets/img/fifa.png");
+    color: white;
+}
+
+
+.aboutMessage {
+    margin: 80px;
+    color: white;
+}
+
+.aboutGrid {
+    margin-left: 400px;
+    display: inline-flex;
+    
+    
+}
+
+.gridElement {
+    margin: 30px;
+    font-size: larger;
+    font-style: bold;
+}
+
+.dropUp {
+    margin-left: 80px;
+    font-style: larger;
+}
