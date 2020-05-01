@@ -28,7 +28,7 @@ class NavBar extends Component {
     const {showHideSidebar} = this.state;
     return (
       <div className="z-index nav-collection">
-        <div className="w3-container w3-hide-medium w3-hide-small w3-bar w3-black">
+        <div className="w3-top w3-container w3-hide-medium w3-hide-small w3-bar w3-black">
           <div className="w3-bar-item">
             <div className="logo">
               <img className="logo-image" src={Logo} alt="Logo of stardome" />
@@ -40,7 +40,7 @@ class NavBar extends Component {
           HOME
           </Link>
 
-          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/">
+          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/events">
           TOURNAMENTS
           </Link>
 
@@ -68,7 +68,7 @@ class NavBar extends Component {
 
          
         </div>
-        <div className="w3-main w3-hide-large">
+        <div className="w3-main w3-top w3-black w3-hide-large">
           {showHideSidebar && <SideBar />}
           <div className="w3-bar-item w3-left">
             <div className="logo" style={{ margin: "0 0 0 20px" }}>
