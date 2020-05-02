@@ -1,0 +1,11 @@
+@import "../../variables";
+
+.TournamentList
+{
+    @include flexContainer(column);
+    align-items: unset;
+    width: 90vw;
+    max-width: 700px;
+    margin: auto;    
+    padding: 0 20px 30px;
+}
