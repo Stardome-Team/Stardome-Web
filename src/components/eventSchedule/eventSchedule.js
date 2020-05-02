@@ -1,5 +1,6 @@
 import React from 'react'
 import './eventSchedule.scss'
+import SCHEDULE from './schedule.data'
 
 class EventSchedule extends React.Component {
     constructor(props) {
