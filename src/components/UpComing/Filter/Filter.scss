@@ -29,18 +29,53 @@
         @media screen and (max-width:632px)
         {
             display: block;
-            margin-top: 15px;
         }
+   }
+
+   select
+   {
+        padding: 5px;
+   }
+
+   option
+   {
+       color:#000;
    }
 
    input
    {
-       margin-left: 12vw;
+       padding: 5px 15px;
+   }
 
-       @media screen and (max-width:632px)
-       {
-            margin-left: 0;   
-       }
+   .field 
+   {
+       
+        margin-left: 12vw;
+        position: relative;     
+        margin-top: 15px;  
+
+        &::after,&::before
+        {
+            content: "";
+            height: 100%;
+            width: 2px;
+            background-color: $grey-bg;
+            position: absolute;
+            z-index: 10;
+            left: 10px;
+            top: 0;
+        }   
+        
+        &::after
+        {
+            right: 10px;
+            left: unset;
+        }
+
+        @media screen and (max-width:632px)
+        {
+                margin-left: 0;   
+        }
    }
 
 }

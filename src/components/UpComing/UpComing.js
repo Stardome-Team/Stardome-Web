@@ -7,13 +7,14 @@ export default class UpComing extends Component
 {
     state =
     {
-        categories:["Adventure"],
-        search:""
+        categories:["adventure","football"],
+        search:"",
+        selectedCategory:"adventure"
     }
 
-    updateSearch = value =>
+    updateSearch = event =>
     {
-        value = value.trim();
+        const value = event.target.value.trim();
 
         if(value)
         {
@@ -21,10 +22,18 @@ export default class UpComing extends Component
         }
     }
 
+    updateCategory = event =>
+    {
+        const value = this.state.categories[event.target.selectedIndex];
+        this.setState({selectedCategory:value});        
+    }
+
     render() {
         return (
             <div className="UpComingWrapper">
                 <Filter 
+                search={this.state.search}
+                changeCat = {this.updateCategory}
                 update={this.updateSearch} categories={this.state.categories}/>
                 <TournamentList />                
             </div>

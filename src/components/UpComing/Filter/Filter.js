@@ -3,22 +3,25 @@ import "./Filter.scss";
 
 export default function Filter(props) 
 {
-    const options = props.categories.map( (cat,i) => 
+    const options = props.categories.map( cat => 
     {
         return (
-           <option key={cat} selected={i===0} value={cat}>{cat}</option>
+           <option key={cat} value={cat}>{cat}</option>
         );
     } )
     return (
         <div className="Inputs">
 
-            <select >
+            <select onChange={props.changeCat}>
 
                 { options }
                
             </select>
 
-            <input type="search" placeholder="Search..." />
+            <div className="field">
+            <input value={props.search} onChange={props.update} type="search" placeholder="Search..." />
+            </div>
+            
             
         </div>
     )
