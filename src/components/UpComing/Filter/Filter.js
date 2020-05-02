@@ -8,7 +8,8 @@ export default function Filter(props)
         return (
            <option key={cat} value={cat}>{cat}</option>
         );
-    } )
+    } );
+
     return (
         <div className="Inputs">
 
