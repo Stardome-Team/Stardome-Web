@@ -53,7 +53,7 @@ class NavBar extends Component {
           NEWS
           </Link>
 
-          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/news">
+          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/about">
           ABOUT
           </Link>
          
