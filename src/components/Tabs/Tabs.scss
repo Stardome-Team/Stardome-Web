@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+$tab-color:#fff;
+$blue-btn:#457FFF;
+$red:#EC4E20;
+$grey-bg:#C4C4C4;
+$bar:6px;
+
+@mixin flexContainer($direction:row)
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;  
+    flex-wrap: wrap;
+    flex-direction: $direction;
+    
+}
+
+.Tabs
+{
+    @include flexContainer();
+    background-color: transparent;
+    width: 90vw;
+    max-width: 700px;
+    margin: 80px auto 20px;
+
+    .__Tab
+    {
+        color:$tab-color;
+        text-transform: uppercase;
+        position:relative;
+        cursor: pointer;
+
+        &::after
+        {
+            content: "";
+            position: absolute;
+            background-color:$tab-color;   
+            pointer-events: none;         
+            width: 0%;
+            height: $bar;
+            bottom: 0;
+            left: 0;
+            transition: width 0.2s ease;
+            
+        }
+
+    }
+
+    h3
+    {
+        font-size: 1.4rem;
+        line-height: 1.6rem; 
+        font-family: 'Roboto Condensed', sans-serif;     
+        
+    }
+
+    
+    .__Separator           
+    {
+        
+        width: $bar;
+        height: 38px; 
+        background-color: $tab-color;
+    }
+    
+
+    @media screen and (max-width:630px)
+    {
+        @include flexContainer(column);
+
+        .__Tab
+        {
+            margin-top: 10px;
+        }
+
+        .__Separator           
+        {
+            display: none;
+        }    
+    }
+
+    
+
+}
+
+.__Tab:hover::after,.__Tab.active::after
+{
+    width: 100%;
+}
