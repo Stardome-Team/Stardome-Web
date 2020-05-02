@@ -3,6 +3,7 @@ import './tournament.scss';
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
 import Tabs from '../../components/Tabs/Tabs';
+import Upcoming from '../../components/UpComing/UpComing';
 import EventSchedule from '../../components/eventSchedule/eventSchedule';
 
 class TournamentPage extends Component
@@ -31,7 +32,7 @@ class TournamentPage extends Component
 
     render()
     {
-        const upCom = this.state.showUpComing ? <div>gtygyhjby</div> : <EventSchedule/>
+        const upCom = this.state.showUpComing ? <Upcoming /> : <EventSchedule/>
         
         return (
             <>
