@@ -3,7 +3,7 @@ import './tournament.scss';
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
 import Tabs from '../../components/Tabs/Tabs';
-// import EventSchedule from '../../components/eventSchedule/eventSchedule';
+import EventSchedule from '../../components/eventSchedule/eventSchedule';
 
 class TournamentPage extends Component
 {
@@ -31,6 +31,7 @@ class TournamentPage extends Component
 
     render()
     {
+        const upCom = this.state.showUpComing ? <div>gtygyhjby</div> : <EventSchedule/>
         
         return (
             <>
@@ -41,7 +42,7 @@ class TournamentPage extends Component
                    showTourn={this.toggleShowTourn}
                    isTourn={this.state.showTourn} 
                    isUpcoming={this.state.showUpComing} />
-                {/* <EventSchedule/> */}
+                { upCom }
                 <Footer/>
             </div>
             </>
