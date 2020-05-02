@@ -1,0 +1,81 @@
+@import "../../variables";
+
+@mixin input 
+{
+    color: $grey-bg;
+    border: 1px solid $grey-bg;
+    text-transform: capitalize;  
+    font-size:1.4rem;
+    font-family: "Roboto Condensed";
+    background-color: transparent;
+   
+}
+
+.Inputs
+{
+   @include flexContainer();
+
+   @media screen and (max-width:630px)
+   {
+        flex-direction: column;
+        align-items: flex-start; 
+      
+   }
+
+   select,input
+   {
+        @include input;
+
+        @media screen and (max-width:632px)
+        {
+            display: block;
+        }
+   }
+
+   select
+   {
+        padding: 5px;
+   }
+
+   option
+   {
+       color:#000;
+   }
+
+   input
+   {
+       padding: 5px 15px;
+   }
+
+   .field 
+   {
+       
+        margin-left: 12vw;
+        position: relative;     
+        margin-top: 15px;  
+
+        &::after,&::before
+        {
+            content: "";
+            height: 100%;
+            width: 2px;
+            background-color: $grey-bg;
+            position: absolute;
+            z-index: 10;
+            left: 10px;
+            top: 0;
+        }   
+        
+        &::after
+        {
+            right: 10px;
+            left: unset;
+        }
+
+        @media screen and (max-width:632px)
+        {
+                margin-left: 0;   
+        }
+   }
+
+}

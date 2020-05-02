@@ -104,6 +104,7 @@
 	padding-right: 0;
 	min-height: 480px;
 	display: flex;
+	margin-top: 80px;
 }
 
 
@@ -253,7 +254,9 @@
 		.container
 		{
 			min-height: 110vh;
+			margin-top: 34px ;
 		}
+
 		.formContainer
 		{
 			width: 100%;
@@ -291,12 +294,14 @@
 	}
 }
 
-
-@media screen and (min-width:699px) and (max-width:992px)
+@media screen and (max-width:540px)
 {
-	.Forms
-	{		
-		/* transform: translate(-28px,35px); */
+	
+	.Forms form
+	{
+		padding: 0 16px;
 	}
 
+
 }
+
