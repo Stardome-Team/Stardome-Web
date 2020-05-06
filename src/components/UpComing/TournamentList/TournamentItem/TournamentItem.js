@@ -1,26 +1,48 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import "./TournamentItem.scss";
+import Participate from "./participate"
 
-export default function TournamentItem({name,slots}) {
-    return (
-        <div className="Event">
+export default class TournamentItem extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = 
+        {
+            showParticipate:false
+        }
+        this.toggleShowParticipate = this.toggleShowParticipate.bind(this);
+    }
 
-          
+    toggleShowParticipate = () =>
+    {
+        this.setState({
+            showParticipate: true
+        });
+    }
 
-        <div className="Details">
+    render() {
+        const {showParticipate} = this.state;
+        return (
+            <div className="Event">
 
-        <p className="Title">{name}</p>
-        <p>Details of events</p>
-        <p>{slots} slots</p>
-                
-        </div>
+            <div className="Details">
 
-        <NavLink to="/">
-            Participate
-        </NavLink> 
-        
-           
-        </div>
-    )
+            <p className="Title">{this.props.name}</p>
+            <p>Details of events</p>
+            <p>{this.props.slots} slots</p>
+            {showParticipate && <Participate/>}
+            </div>
+
+            
+            <div onClick={() => this.toggleShowParticipate("showParticipate")}>
+                <a>
+                    Participate
+                </a>
+            </div>
+             
+            
+            
+            </div>
+        );
+    }
 }

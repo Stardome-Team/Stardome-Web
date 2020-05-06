@@ -1,6 +1,6 @@
 import React from 'react'
 import './eventSchedule.scss'
-import SCHEDULE from './schedule.data'
+// import SCHEDULE from './schedule.data'
 import './eventSchedule.scss';
 
 class EventSchedule extends React.Component {
