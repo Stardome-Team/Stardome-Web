@@ -15,9 +15,9 @@ export default class TournamentItem extends React.Component {
 
     toggleShowParticipate = () =>
     {
-        this.setState({
-            showParticipate: true
-        });
+        this.setState((state) => ({
+            showParticipate: !state.showParticipate
+        }));
     }
 
     render() {
@@ -30,18 +30,16 @@ export default class TournamentItem extends React.Component {
             <p className="Title">{this.props.name}</p>
             <p>Details of events</p>
             <p>{this.props.slots} slots</p>
-            {showParticipate && <Participate/>}
+            {showParticipate && <Participate setChanged={this.toggleShowParticipate}/>}
             </div>
 
             
-            <div onClick={() => this.toggleShowParticipate("showParticipate")}>
-                <a>
+            <div>
+                <a onClick={() => this.toggleShowParticipate("showParticipate")}>
                     Participate
                 </a>
             </div>
              
-            
-            
             </div>
         );
     }

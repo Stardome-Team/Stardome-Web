@@ -6,23 +6,28 @@ export default class Participate extends React.Component {
         super(props);
         this.state = 
         {
-            showPopUp:true
+            showPopUp: true
         }
         this.toggleShowPopUp = this.toggleShowPopUp.bind(this);
     }
 
+
     toggleShowPopUp = () =>
     {
         this.setState({
-            showPopUp: false
+            showPopUp: !this.state.showPopUp
         });
+        this.changeProps()
+    }
+    changeProps = () => {
+        this.props.setChanged();
     }
     render(){
         const {showPopUp} = this.state;
     return (
         <div className="particpate-pop-up">
            <div style={{display: this.state.showPopUp ? 'block' : 'none' }} class="w3-modal">
-                <div class="w3-modal-content w3-card-4" id="back-layer">
+                <div class="w3-modal-content w3-card-3" style={{width: 500+"px"}} id="back-layer">
                 <header class="w3-container" id="popup-header"> 
                     <span id="close-button" onClick={this.toggleShowPopUp}
                     class="w3-button w3-display-topright">
