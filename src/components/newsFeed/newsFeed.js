@@ -6,7 +6,7 @@ import feed1 from '../../assets/img/feed1.png';
 import feed2 from '../../assets/img/feed2.png';
 import feed3 from '../../assets/img/feed3.png';
 import TwitterFeed from '../../components/twitterFeed/twitterFeed'
-import Participate from '../../components/UpComing/TournamentList/TournamentItem/participate'
+import Participate from '../../components/newsPopUp/participate'
 
 class NewsFeed extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ render() {
     return (
       <div className="midsection">
         <TwitterFeed/>
-        {showParticipate && <Participate/>}
+        {showParticipate && <Participate setChanged={this.toggleShowParticipate}/>}
         <div className="newsfeed"> 
           {picArr.map((item, index) => {
                     return(
