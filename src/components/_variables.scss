@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+$tab-color:#fff;
+$blue-btn:#457FFF;
+$red:#EC4E20;
+$grey-bg:#C4C4C4;
+$bar:6px;
+
+@mixin flexContainer($direction:row)
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;  
+    flex-wrap: wrap;
+    flex-direction: $direction;
+    
+}
