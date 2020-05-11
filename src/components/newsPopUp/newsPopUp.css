@@ -1,0 +1,19 @@
+#close-button {
+  border-top-right-radius: 10px;
+  background: none;
+}
+
+#back-layer {
+  border-radius: 10px;
+}
+
+#popup-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.popup-header-text {
+  color: black;
+  font-family: 'Roboto Condensed';
+}
+/*# sourceMappingURL=newsPopUp.css.map */
