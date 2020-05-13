@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap");
+.Tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: transparent;
+  width: 90vw;
+  max-width: 700px;
+  margin: 80px auto 20px;
+}
+
+.Tabs .__Tab {
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+}
+
+.Tabs .__Tab::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  pointer-events: none;
+  width: 0%;
+  height: 6px;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+}
+
+.Tabs h3 {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.Tabs .__Separator {
+  width: 6px;
+  height: 38px;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 630px) {
+  .Tabs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .Tabs .__Tab {
+    margin-top: 10px;
+  }
+  .Tabs .__Separator {
+    display: none;
+  }
+}
+
+.__Tab:hover::after, .__Tab.active::after {
+  width: 100%;
+}
+/*# sourceMappingURL=Tabs.css.map */

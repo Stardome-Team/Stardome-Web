@@ -1,0 +1,56 @@
+.midsection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.newsfeed {
+  padding-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  position: relative;
+}
+
+.feed-content {
+  text-align: left;
+  position: relative;
+}
+
+.feed-content:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.feed-header {
+  position: absolute;
+  bottom: 0;
+  font-family: 'Post No Bills Colombo';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 36px;
+  color: #457FFF;
+  padding: 40px 20px 40px 20px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.feed-preamble {
+  font-family: 'Roboto Condensed';
+  line-height: 21px;
+  color: #FFFFFF;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 768px) {
+  .feed-header {
+    padding: 20px 10px 20px 20px;
+  }
+}
+/*# sourceMappingURL=newsFeed.css.map */

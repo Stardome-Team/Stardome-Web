@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,sFAAI;ADEZ,AAAA,eAAe,CACf;ECOI,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;EAC7B,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,IAAI;EACf,cAAc,EDVS,MAAM;EAC7B,WAAW,EAAE,KAAK;EAClB,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,WAAW;CACvB",
+    "sources": [
+        "TournamentList.scss",
+        "../../_variables.scss"
+    ],
+    "names": [],
+    "file": "TournamentList.css"
+}
