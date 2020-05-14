@@ -23,6 +23,20 @@ body {
 }
 
 .dropUp {
+    // margin-left: 80px;
+    // font-style: larger;
+    display: inline-block;
+}
+
+.fontStyle {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.fontStyle, .text {
+    display: inline;
+}
+
+.text {
     margin-left: 80px;
-    font-style: larger;
 }
