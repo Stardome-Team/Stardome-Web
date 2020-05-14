@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AACA,AAAA,aAAa,CAAA;EACT,uBAAuB,EAAE,IAAI;EAC7B,UAAU,EAAE,IAAI;CACnB;;AAED,AAAA,WAAW,CAAA;EACP,aAAa,EAAE,IAAI;CACtB;;AACD,AAAA,aAAa,CAAA;EACT,sBAAsB,EAAE,IAAI;EAC5B,uBAAuB,EAAE,IAAI;CAChC;;AAED,AAAA,kBAAkB,CAAA;EACd,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,kBAAkB;CAClC",
-    "sources": [
-        "participate.scss"
-    ],
-    "names": [],
-    "file": "participate.css"
-}

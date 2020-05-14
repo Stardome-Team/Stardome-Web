@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EACd,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,IAAI;CACd;;AACD,AAAA,cAAc,CAAA;EACZ,KAAK,EAAE,GAAG;EACV,OAAO,EAAE,gBAAgB;CAC1B;;AAED,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK;EACtC,AAAA,cAAc,CAAA;IACV,OAAO,EAAE,IAAI;GAChB",
-    "sources": [
-        "twitterFeed.scss"
-    ],
-    "names": [],
-    "file": "twitterFeed.css"
-}

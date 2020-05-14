@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,SAAS,CAAA;EACL,UAAU,EAAE,OAAO;CACtB",
-    "sources": [
-        "newspage.scss"
-    ],
-    "names": [],
-    "file": "newspage.css"
-}
