@@ -1,6 +1,7 @@
 import React from 'react';
 import './aboutpage.scss';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faAngleUp} from '@fortawesome/free-solid-svg-icons';
 import HomePageCarousel from '../../components/homePageCarousel/homepagecarousel';
 import NavBar from '../../components/navbar/navbar'
 import Footer from '../../components/footer/footer'
@@ -43,7 +44,8 @@ Ut ut officia commodo adipisicing aliqua do duis fugiat velit. Irure non non ea 
     </div>
 
     <div className = "dropUp">
-        <h4><strong>How To Watch</strong></h4>
+        <h4 className = "text"><strong>How To Watch</strong></h4>
+        <FontAwesomeIcon className = "fontStyle" icon = {faAngleUp} />
     </div>
 
     

@@ -19,10 +19,15 @@
     text-decoration: none;
     font-family: Trebuchet MS;
 }
-#nav-links:hover{
+
+.move-nav:hover{
     border-bottom: #EC4E20;
     border-bottom-style: solid;
 }
+// #nav-links:hover{
+//     border-bottom: #EC4E20;
+//     border-bottom-style: solid;
+// }
 #nav-button{
     margin-top: 1.4%;
     background-color: #457FFF;
