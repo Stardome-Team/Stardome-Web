@@ -36,6 +36,17 @@
     font-family: Trebuchet MS;
     margin-right: 32px;
     margin-left: 16px;
+    &:hover{
+        background-color: #457FFF;
+        opacity: 0.8;
+    }
+}
+
+#socials{
+    &:hover{
+        opacity: 0.8;
+        background-color: rgb(124, 121, 121);
+    }
 }
 
 #sidebar-button{
