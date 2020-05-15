@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
+import Slider from "react-slick";
 import './homepagecarousel.scss';
 import ImgComp from './ImgComp'
 import Fifa from "../../assets/img/fifa.png";
 import Pubg from "../../assets/img/pubg.png";
 import Car from "../../assets/img/car.png";
 
-
+/*
 function HomePageCarousel (){
     let sliderArr = [<ImgComp src={Fifa}/>,<ImgComp src={Pubg}/>,<ImgComp src={Car}/>];
     const [x, setX] = useState(0);
@@ -33,5 +34,43 @@ function HomePageCarousel (){
         </div>
     )
   }
+
+*/
+
+function HomePageCarousel ()
+{
+    const settings = 
+    {
+        dots: false,
+        lazyLoad: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        cssEase: "ease-in-out",
+        nextArrow: null,
+        prevArrow: null
+  };
+
+  let sliderArr = [<ImgComp src={Fifa}/>,<ImgComp src={Pubg}/>,<ImgComp src={Car}/>];
+
+  return (
+    <div className="slider">
+        <Slider style={{width: "100%"}} {...settings}>
+
+        {sliderArr.map((item, index) => {
+                return(
+                    <div key={index} >
+                        {item}
+                    </div>
+                )
+            })}
+
+        </Slider>
+        </div>
+  );
+
+}
 
 export default HomePageCarousel;
