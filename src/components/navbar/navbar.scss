@@ -24,10 +24,12 @@
     border-bottom: #EC4E20;
     border-bottom-style: solid;
 }
-// #nav-links:hover{
-//     border-bottom: #EC4E20;
-//     border-bottom-style: solid;
-// }
+
+
+.smIcons Img:hover {
+    background-color:black;
+}
+
 #nav-button{
     margin-top: 1.4%;
     background-color: #457FFF;

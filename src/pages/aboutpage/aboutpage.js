@@ -3,12 +3,15 @@ import './aboutpage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faAngleUp} from '@fortawesome/free-solid-svg-icons';
 import HomePageCarousel from '../../components/homePageCarousel/homepagecarousel';
-import NavBar from '../../components/navbar/navbar'
-import Footer from '../../components/footer/footer'
+import NavBar from '../../components/navbar/navbar';
+import Footer from '../../components/footer/footer';
+// import Accordion from 'react-bootstrap/Accordion';
 
+import {Accordion, Card, Button} from 'react-bootstrap';
 
 
 const aboutPage = () => (
+
     
   <div className="aboutpage">
     <NavBar/>
@@ -45,7 +48,18 @@ Ut ut officia commodo adipisicing aliqua do duis fugiat velit. Irure non non ea 
 
     <div className = "dropUp">
         <h4 className = "text"><strong>How To Watch</strong></h4>
-        <FontAwesomeIcon className = "fontStyle" icon = {faAngleUp} />
+        <Accordion defaultActiveKey = "0">
+            <Card>
+                <Card.Header>
+                    <Accordion.Toggle as = {Button} variant = "link" eventKey = "0">
+                        <FontAwesomeIcon className = "fontStyle" icon = {faAngleUp} />
+                    </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="0">
+                    <Card.Body> How To Watch </Card.Body>
+                </Accordion.Collapse>
+            </Card>
+        </Accordion>
     </div>
 
     

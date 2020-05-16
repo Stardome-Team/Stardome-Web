@@ -57,14 +57,14 @@ class NavBar extends Component {
           ABOUT
           </Link>
          
-            <Link id="nav-button" className="w3-bar-item w3-button w3-right" to="/auth">SIGN IN</Link>
+            <Link id="nav-button" className="w3-bar-item w3-button w3-right smIcons" to="/auth">SIGN IN</Link>
 
-            <Link to="/"  className="w3-bar-item w3-button w3-right" > <img alt="instagram logo" src={Instagram} /></Link>
-            <Link className="w3-bar-item w3-button w3-right" to="/auth"> <img alt="twitter logo" src={Twitter} /></Link>
+            <Link to="/"  className="w3-bar-item w3-button w3-right smIcons" > <img alt="instagram logo" src={Instagram} /></Link>
+            <Link className="w3-bar-item w3-button w3-right smIcons" to="/auth"> <img alt="twitter logo" src={Twitter} /></Link>
 
-            <Link className="w3-bar-item w3-button w3-right" to="/auth"> <img alt="Youtube logo" src={Youtube} /></Link>
+            <Link className="w3-bar-item w3-button w3-right smIcons" to="/auth"> <img alt="Youtube logo" src={Youtube} /></Link>
 
-            {/* <Link className="w3-bar-item w3-button w3-right" to="/auth"> <img alt="Facebook logo" src={Facebook} /></Link> */}
+            {/* <Link className="w3-bar-item w3-button w3-right smIcons" to="/auth"> <img alt="Facebook logo" src={Facebook} /></Link> */}
 
          
         </div>
@@ -75,7 +75,7 @@ class NavBar extends Component {
               <img className="logo-image" src={Logo} />
             </div>
           </div>
-          <div className="w3-black w3-right ">
+          <div className="w3-black w3-right smIcons ">
             <div
               style={{
                 color: "#457FFF",
