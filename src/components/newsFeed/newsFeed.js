@@ -27,7 +27,7 @@ toggleshowNews = () =>
 
 render() {
     const {showNews} = this.state;
-    let picArr = [<ImgComp src={feed}/>,<ImgComp src={feed1}/>,<ImgComp src={feed2}/>,<ImgComp src={feed3}/>];
+    let picArr = [<ImgComp src={feed}/>,<ImgComp src={feed1}/>,<ImgComp src={feed2}/>,<ImgComp src={feed3}/>, <ImgComp src={feed2}/>, <ImgComp src={feed1}/>];
     let infoArr = ['']
     return (
       <div className="midsection">
