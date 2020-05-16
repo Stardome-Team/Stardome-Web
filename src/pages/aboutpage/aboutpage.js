@@ -1,7 +1,7 @@
 import React from 'react';
 import './aboutpage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faAngleUp} from '@fortawesome/free-solid-svg-icons';
+import {faAngleUp, faAngleDown} from '@fortawesome/free-solid-svg-icons';
 import HomePageCarousel from '../../components/homePageCarousel/homepagecarousel';
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
@@ -10,8 +10,26 @@ import Footer from '../../components/footer/footer';
 import {Accordion, Card, Button} from 'react-bootstrap';
 
 
-const aboutPage = () => (
+class aboutPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = 
+        {
+            showPopUp: false
+        }
+        this.toggleShowPopUp = this.toggleShowPopUp.bind(this);
+    }
 
+
+    toggleShowPopUp = () =>
+    {
+        this.setState({
+            showPopUp: !this.state.showPopUp
+        });
+    }
+    render(){
+        const {showPopUp} = this.state;
+    return (
     
   <div className="aboutpage">
     <NavBar/>
@@ -47,25 +65,21 @@ Ut ut officia commodo adipisicing aliqua do duis fugiat velit. Irure non non ea 
     </div>
 
     <div className = "dropUp">
-        <h4 className = "text"><strong>How To Watch</strong></h4>
-        <Accordion defaultActiveKey = "0">
-            <Card>
-                <Card.Header>
-                    <Accordion.Toggle as = {Button} variant = "link" eventKey = "0">
-                        <FontAwesomeIcon className = "fontStyle" icon = {faAngleUp} />
-                    </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="0">
-                    <Card.Body> How To Watch </Card.Body>
-                </Accordion.Collapse>
-            </Card>
-        </Accordion>
+        <div classNAme="header">
+            <h4 className = "text"><strong>How To Watch</strong></h4>
+            <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+        </div>
+        <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+            <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
+        </div>
     </div>
 
     
 
     {/* <Footer/> */}
   </div>
-  );
+        )
+    }
+}
 
 export default aboutPage;

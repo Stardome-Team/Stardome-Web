@@ -25,7 +25,8 @@ body {
 .dropUp {
     // margin-left: 80px;
     // font-style: larger;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto;
 }
 
 .fontStyle {
