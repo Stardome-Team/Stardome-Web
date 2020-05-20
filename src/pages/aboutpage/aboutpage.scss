@@ -2,7 +2,8 @@ body {
     background-image: url("../../assets/img/fifa.png");
     color: white;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    // background-attachment: fixed;
+    font-family: Trebuchet MS;
 }
 
 
@@ -11,22 +12,20 @@ body {
     color: white;
 }
 
-.aboutGrid {
-    margin-left: 400px;
-    display: inline-flex;
-    
-    
+.aboutGrid { 
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
 .gridElement {
     margin: 30px;
     font-size: larger;
     font-style: bold;
+    text-align: center;
 }
 
 .dropUp {
-    // margin-left: 80px;
-    // font-style: larger;
+    margin: 10px 0 10px 0;
     display: grid;
     grid-template-columns: auto;
 }
@@ -41,7 +40,11 @@ body {
 }
 
 .text {
-    margin-left: 80px;
+    margin-left: 5%;
+}
+
+.content{
+    margin-left: 5%;
 }
 
 .footer{

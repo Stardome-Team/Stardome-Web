@@ -52,85 +52,54 @@ class aboutPage extends React.Component {
             </div>
 
             <div className = "gridElement">
-                <h5><strong>Participants</strong></h5>
-                <p><strong>Over 500 Participants</strong></p>
+                <h5><strong>Participants so far</strong></h5>
+                <p><strong>Over 530 participants</strong></p>
             </div>
 
             <div className = "gridElement">
                 <h5><strong>Cash Prizes</strong></h5>
-                <p><strong>$250k</strong></p>
+                <p><strong>$250k +</strong></p>
                 
             </div>
         
         </div>
 
-        <div className = "dropUp">
-            <div classNAme="header">
-                <h4 className = "text"><strong>How To Watch</strong></h4>
-                <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+        <div className="about-grid">
+            <div className = "dropUp">
+                <div classNAme="header">
+                    <h4 className = "text"><strong>How To Watch</strong></h4>
+                    <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                </div>
+                <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
+                </div>
             </div>
-            <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
-                <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
+            <div className = "dropUp">
+                <div classNAme="header">
+                    <h4 className = "text"><strong>How To Watch</strong></h4>
+                    <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                </div>
+                <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
+                </div>
             </div>
-        </div>
-
-        <div className = "dropUp">
-            <div classNAme="header">
-                <h4 className = "text"><strong>Shows</strong></h4>
-                <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+            <div className = "dropUp">
+                <div classNAme="header">
+                    <h4 className = "text"><strong>How To Watch</strong></h4>
+                    <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                </div>
+                <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
+                </div>
             </div>
-            <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
-                <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
-            </div>
-        </div>
-
-        <div className = "dropUp">
-            <div classNAme="header">
-                <h4 className = "text"><strong>Channels</strong></h4>
-                <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
-            </div>
-            <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
-                <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
-            </div>
-        </div>
-
-        <div className = "dropUp">
-            <div classNAme="header">
-                <h4 className = "text"><strong>Presenters</strong></h4>
-                <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
-            </div>
-            <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
-                <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
-            </div>
-        </div>
-
-        <div className = "dropUp">
-            <div classNAme="header">
-                <h4 className = "text"><strong>Sponsors</strong></h4>
-                <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
-            </div>
-            <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
-                <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
-            </div>
-        </div>
-
-        <div className = "dropUp">
-            <div classNAme="header">
-                <h4 className = "text"><strong>Privacy Policy</strong></h4>
-                <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
-            </div>
-            <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
-                <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
-            </div>
-        </div>
-
-        <div className = "dropUp">
-            <div classNAme="header">
-                <h4 className = "text"><strong>Support</strong></h4>
-                <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
-            </div>
-            <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
-                <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
+            <div className = "dropUp">
+                <div classNAme="header">
+                    <h4 className = "text"><strong>How To Watch</strong></h4>
+                    <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                </div>
+                <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
+                </div>
             </div>
         </div>
 
