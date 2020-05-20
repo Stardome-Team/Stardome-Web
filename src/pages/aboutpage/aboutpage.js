@@ -31,8 +31,8 @@ class aboutPage extends React.Component {
         const {showPopUp} = this.state;
     return (
     <>
-    <div className="bg-image"></div>
     <div className="aboutpage">
+    <div className="bg-image"></div>
         <NavBar/>
         <div className = "aboutMessage">
             <h2><strong>About Stardome</strong></h2>

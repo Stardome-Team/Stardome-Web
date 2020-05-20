@@ -1,20 +1,20 @@
 body {
-    // background-image: url("../../assets/img/fifa.png");
+    height: 100%;
+    background-image: url("../../assets/img/fifablurred.jpg");
     color: white;
     font-family: Trebuchet MS;
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
 }
-.bg-image{
-    background-image: url("../../assets/img/fifa.png");
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    height: 100%;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+// .bg-image{
+//     background-image: url("../../assets/img/fifa.png");
+//     filter: blur(8px);
+//     -webkit-filter: blur(8px);
+//     height: 100%;
+//     /* Center and scale the image nicely */
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
 
 .aboutPage{
     background-color: rgb(0,0,0); /* Fallback color */
