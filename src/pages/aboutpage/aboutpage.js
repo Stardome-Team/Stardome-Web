@@ -78,7 +78,7 @@ class aboutPage extends React.Component {
                 </div>
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>Shows</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
@@ -87,7 +87,7 @@ class aboutPage extends React.Component {
                 </div>
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>Channels</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
@@ -96,7 +96,16 @@ class aboutPage extends React.Component {
                 </div>
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>Presenters</strong></h4>
+                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                    </div>
+                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                        <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
+                    </div>
+                </div>
+                <div className = "dropUp">
+                    <div classNAme="header">
+                        <h4 className = "text"><strong>Sponsors</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
@@ -107,7 +116,7 @@ class aboutPage extends React.Component {
             <div className="grid2">
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>About</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
@@ -116,7 +125,7 @@ class aboutPage extends React.Component {
                 </div>
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>Privacy Policy</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
@@ -125,7 +134,7 @@ class aboutPage extends React.Component {
                 </div>
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>FAQs</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
@@ -134,7 +143,16 @@ class aboutPage extends React.Component {
                 </div>
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>Rules</strong></h4>
+                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                    </div>
+                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                        <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
+                    </div>
+                </div>
+                <div className = "dropUp">
+                    <div classNAme="header">
+                        <h4 className = "text"><strong>Support</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
@@ -145,7 +163,7 @@ class aboutPage extends React.Component {
             <div className="grid3">
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>Advertisement</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
@@ -154,7 +172,7 @@ class aboutPage extends React.Component {
                 </div>
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>Sponsorship</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
@@ -163,7 +181,7 @@ class aboutPage extends React.Component {
                 </div>
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>Press & Resource</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
@@ -172,7 +190,7 @@ class aboutPage extends React.Component {
                 </div>
                 <div className = "dropUp">
                     <div classNAme="header">
-                        <h4 className = "text"><strong>How To Watch</strong></h4>
+                        <h4 className = "text"><strong>Contact Us</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
                     <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
