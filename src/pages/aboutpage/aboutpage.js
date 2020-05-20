@@ -30,8 +30,9 @@ class aboutPage extends React.Component {
     render(){
         const {showPopUp} = this.state;
     return (
-    
-  <div className="aboutpage">
+    <>
+    <div className="bg-image"></div>
+    <div className="aboutpage">
         <NavBar/>
         <div className = "aboutMessage">
             <h2><strong>About Stardome</strong></h2>
@@ -184,8 +185,8 @@ class aboutPage extends React.Component {
 
 
         <Footer classNAme = "footer" />
-
     </div>
+    </>
         )
     }
 }
