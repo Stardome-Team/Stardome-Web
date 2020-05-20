@@ -12,26 +12,26 @@ function Footer (){
             <div className="footer-section">
                 <div className="section1">
                     <div className="section-header">StarDome TV</div>
-                    <div className="section-list">How to watch</div>
-                    <div className="section-list">Shows</div>
-                    <div className="section-list">Channels</div>
-                    <div className="section-list">Presenters</div>
-                    <div className="section-list">Sponsors</div>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">How to watch</div></Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Shows</div></Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Channels</div></Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Presenters</div></Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Sponsors</div></Link>
                 </div>
                 <div className="section1">
                     <div className="section-header">StarDome Info</div>
-                    <div className="section-list">About</div>
-                    <div className="section-list">Privacy Policy</div>
-                    <div className="section-list">FAQs</div>
-                    <div className="section-list">Rules</div>
-                    <div className="section-list">Support</div>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">About</div></Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Privacy Policy</div></Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">FAQs</div></Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Rules</div></Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Support</div></Link>
                 </div>
                 <div className="section1">
                     <div className="section-header">StarDome Biz</div>
-                    <div className="section-list">Advertisment</div>
-                    <div className="section-list">Sponsorship</div>
-                    <div className="section-list">Press & Resource</div>
-                    <div className="section-list">Contact Us</div>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Advertisment</div></Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Sponsorship</div> </Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Press & Resource</div> </Link>
+                    <Link to = "/about" style={{ textDecoration: "none" }}><div className="section-list">Contact Us</div></Link>
                 </div>
             </div>
             <div className="footer-bottom">
