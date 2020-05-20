@@ -2,7 +2,7 @@ body {
     background-image: url("../../assets/img/fifa.png");
     color: white;
     background-repeat: no-repeat;
-    // background-attachment: fixed;
+    background-attachment: fixed;
     font-family: Trebuchet MS;
 }
 
@@ -28,6 +28,12 @@ body {
     margin: 10px 0 10px 0;
     display: grid;
     grid-template-columns: auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
 }
 
 .fontStyle {
