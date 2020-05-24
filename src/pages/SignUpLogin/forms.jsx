@@ -1,35 +1,23 @@
-import React, { Component } from "react";
+import React, { useState} from "react";
 import styles from "./forms.module.css";
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer'
 
-class Forms extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      signUp: false,
-      signIn: true,
-    };
-  }
+const Forms = () => {
+  const [signIn, setSignIn] = useState(true)
+  const [signUp, setSignUp] = useState(false)
 
-  showSignUp = (e) => {
+  const showSignUp = (e) => {
     e.preventDefault();
-    this.setState({
-      signUp: true,
-      signIn: false,
-    });
+    setSignIn(false);
+    setSignUp(true);
   };
 
-  showSignIn = (e) => {
+  const showSignIn = (e) => {
     e.preventDefault();
-    this.setState({
-      signUp: false,
-      signIn: true,
-    });
+    setSignIn(true);
+    setSignUp(false);
   };
-
-  render() {
-    const { signIn, signUp } = this.state;
 
     return (
       <div className={styles.bg}>
@@ -58,7 +46,7 @@ class Forms extends Component {
               <div className={styles.hiddenLarge}>
                 <p>Have an account ? </p>
                 <button
-                  onClick={(e) => this.showSignIn(e)}
+                  onClick={(e) => showSignIn(e)}
                 >
                   Sign In
                 </button>
@@ -77,7 +65,7 @@ class Forms extends Component {
                   <button
                     className={styles.ghost}
                     id="signIn"
-                    onClick={(e) => this.showSignIn(e)}
+                    onClick={(e) => showSignIn(e)}
                   >
                     Sign In
                   </button>
@@ -109,7 +97,7 @@ class Forms extends Component {
               <div className={styles.hiddenLarge}>
                 <p>No Account ? </p>
                 <button
-                  onClick={(e) => this.showSignUp(e)}
+                  onClick={(e) => showSignUp(e)}
                 >
                   Sign Up
                 </button>
@@ -125,7 +113,7 @@ class Forms extends Component {
                   <p>Enter your personal details and start journey with us</p>
                   <button
                     className={styles.ghost}
-                    onClick={(e) => this.showSignUp(e)}
+                    onClick={(e) => showSignUp(e)}
                   >
                     Sign Up
                   </button>
@@ -139,6 +127,5 @@ class Forms extends Component {
     </div>
     );
   }
-}
 
 export default Forms;
