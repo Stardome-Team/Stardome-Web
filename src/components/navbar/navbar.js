@@ -44,8 +44,8 @@ class NavBar extends Component {
           TOURNAMENTS
           </Link>
 
-          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/">
-          MATCH SCHEDULES
+          <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/standings">
+          STANDINGS
           </Link>
         
           

@@ -30,7 +30,6 @@ class aboutPage extends React.Component {
     render(){
         const {showPopUp} = this.state;
     return (
-    <>
     <div className="aboutpage">
     <div className="bg-image"></div>
         <NavBar/>
@@ -204,7 +203,7 @@ class aboutPage extends React.Component {
 
         <Footer classNAme = "footer" />
     </div>
-    </>
+    
         )
     }
 }

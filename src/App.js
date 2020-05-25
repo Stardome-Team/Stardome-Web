@@ -6,6 +6,7 @@ import newsPage from './pages/newspage/newspage';
 import aboutPage from './pages/aboutpage/aboutpage';
 import SignUpLogin from "./pages/SignUpLogin/forms";
 import TournamentPage from './pages/tournaments/tournament';
+import StandingsPage from './pages/standings/standingsPage'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path = "/auth" component={SignUpLogin}/>
         <Route path = "/events" component={TournamentPage}/>
         <Route path = "/about" component={aboutPage}/>
+        <Route path = "/standings" component={StandingsPage}/>
       </Switch>
   );
 }
