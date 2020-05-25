@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './standings.scss'
-import Participate from '../UpComing/TournamentList/TournamentItem/participate'
+import Participate from './participate'
 
 const Standings = (props) => {
     
