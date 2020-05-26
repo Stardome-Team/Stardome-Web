@@ -1,40 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './aboutpage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faAngleUp, faAngleDown} from '@fortawesome/free-solid-svg-icons';
-import HomePageCarousel from '../../components/homePageCarousel/homepagecarousel';
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
-// import Accordion from 'react-bootstrap/Accordion';
-
-import {Accordion, Card, Button} from 'react-bootstrap';
 
 
-class aboutPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = 
-        {
-            showPopUp: true
-        }
-        this.toggleShowPopUp = this.toggleShowPopUp.bind(this);
-    }
+const AboutPage = () => {
 
+    const [showPopUp, setShowPopUp] = useState(true)
 
-    toggleShowPopUp = () =>
+    const toggleShowPopUp = (showPopUp) =>
     {
-        this.setState({
-            showPopUp: !this.state.showPopUp
-        });
+        setShowPopUp(prevState => !prevState)
     }
-    render(){
-        const {showPopUp} = this.state;
+    
     return (
     <div className="aboutpage">
     <div className="bg-image"></div>
         <NavBar/>
-        
-
         <div className="aboutGrid">
             <div className = "gridElement">
                 <h5><strong>Tournaments Organized</strong></h5>
@@ -74,45 +58,45 @@ class aboutPage extends React.Component {
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>How To Watch</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Shows</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Channels</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Presenters</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Sponsors</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
@@ -121,45 +105,45 @@ class aboutPage extends React.Component {
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>About</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Privacy Policy</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>FAQs</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Rules</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Support</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
@@ -168,36 +152,36 @@ class aboutPage extends React.Component {
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Advertisement</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Sponsorship</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Press & Resource</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
                 <div className = "dropUp">
                     <div className="header">
                         <h4 className = "text"><strong>Contact Us</strong></h4>
-                        <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
+                        <FontAwesomeIcon onClick={toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
-                    <div style={{display: this.state.showPopUp ? 'block' : 'none' }} className="content">
+                    <div style={{display:  showPopUp ? 'block' : 'none' }} className="content">
                         <p>Nasjovrnjnvrsjb r bjirngbn rbjnrobiujosb jdbundbn rb nbno;r gsfn ugbn ekal</p>
                     </div>
                 </div>
@@ -209,8 +193,7 @@ class aboutPage extends React.Component {
         <Footer className = "footer" />
     </div>
     
-        )
-    }
+    )
 }
 
-export default aboutPage;
+export default AboutPage;
