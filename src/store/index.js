@@ -1,7 +1,7 @@
 import React, { 
 	useState, 
 	createContext,
-	useCallBack,
+	useCallback,
 	useEffect
 } from 'react';
 
@@ -11,14 +11,14 @@ export const StoreContext = createContext(undefined);
 
 export default function StoreProvider({ children }) {
 
-	const [userData, setUserData] = useState({})
-	const[token, setToken] = useState(ls.get('token'))
+	const [userData, setUserData] = useState({});
+	const[token, setToken] = useState(ls.get('token'));
 
-	const updateUserData = useCallBack((updateUserDataObject) => {
-		setUserData({ ...userData, ...updateUserDataObject })
-	})
+	const updateUserData = useCallback((updateUserDataObject) => {
+		setUserData({ ...userData, ...updateUserDataObject });
+	});
 
-	const updateToken = useCallBack((token) => {
+	const updateToken = useCallback((token) => {
 		setToken(token)
 	})
 
