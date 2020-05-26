@@ -15,7 +15,7 @@ class aboutPage extends React.Component {
         super(props);
         this.state = 
         {
-            showPopUp: false
+            showPopUp: true
         }
         this.toggleShowPopUp = this.toggleShowPopUp.bind(this);
     }
@@ -38,17 +38,20 @@ class aboutPage extends React.Component {
         <div className="aboutGrid">
             <div className = "gridElement">
                 <h5><strong>Tournaments Organized</strong></h5>
+                <i style={{fontSize: "xxx-large"}} class="fas fa-gamepad"></i>
                 <p><strong>28 Tournaments</strong></p>
 
             </div>
 
             <div className = "gridElement">
                 <h5><strong>Participants so far</strong></h5>
+                <i style={{fontSize: "xxx-large"}} class="fas fa-users"></i>
                 <p><strong>Over 530 participants</strong></p>
             </div>
 
             <div className = "gridElement">
                 <h5><strong>Cash Prizes</strong></h5>
+                <i style={{fontSize: "xxx-large"}} class="fas fa-hand-holding-usd"></i>
                 <p><strong>$250k +</strong></p>
                 
             </div>
@@ -69,7 +72,7 @@ class aboutPage extends React.Component {
         <div className="about-grid">
             <div className="grid1">
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>How To Watch</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -78,7 +81,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Shows</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -87,7 +90,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Channels</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -96,7 +99,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Presenters</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -105,7 +108,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Sponsors</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -116,7 +119,7 @@ class aboutPage extends React.Component {
             </div>
             <div className="grid2">
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>About</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -125,7 +128,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Privacy Policy</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -134,7 +137,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>FAQs</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -143,7 +146,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Rules</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -152,7 +155,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Support</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -163,7 +166,7 @@ class aboutPage extends React.Component {
             </div>
             <div className="grid3">
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Advertisement</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -172,7 +175,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Sponsorship</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -181,7 +184,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Press & Resource</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -190,7 +193,7 @@ class aboutPage extends React.Component {
                     </div>
                 </div>
                 <div className = "dropUp">
-                    <div classNAme="header">
+                    <div className="header">
                         <h4 className = "text"><strong>Contact Us</strong></h4>
                         <FontAwesomeIcon onClick={this.toggleShowPopUp} className = "fontStyle" icon = {faAngleDown} />
                     </div>
@@ -203,7 +206,7 @@ class aboutPage extends React.Component {
         </div>
 
 
-        <Footer classNAme = "footer" />
+        <Footer className = "footer" />
     </div>
     
         )

@@ -1,6 +1,5 @@
 body {
     height: 100%;
-    color: white;
     font-family: Trebuchet MS;
     background-color: rgb(0,0,0); /* Fallback color */
 }
@@ -15,16 +14,20 @@ body {
 //     background-size: cover;
 // }
 
-.aboutPage{
+.aboutpage{
     background-color: rgb(0,0,0); /* Fallback color */
-    background-image: url("../../assets/img/fifablurred.jpg");
+    // background-image: url("../../assets/img/fifadenim.png");
     background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: #c4c4c4;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
 .aboutMessage {
     margin: 0 80px;
-    color: white;
+    line-height: 25px;
 }
 
 .aboutGrid { 
@@ -86,4 +89,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: grid;
+}
+
+.header{
+    text-align: center;
 }
