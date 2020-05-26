@@ -7,18 +7,20 @@ import aboutPage from './pages/aboutpage/aboutpage';
 import SignUpLogin from "./pages/SignUpLogin/forms";
 import TournamentPage from './pages/tournaments/tournament';
 import StandingsPage from './pages/standings/standingsPage'
-
+import StoreProvider from './store';
 
 function App() {
   return(
-      <Switch>
-        <Route exact path = "/" component={HomePage}/>
-        <Route path = "/news" component={newsPage}/>
-        <Route path = "/auth" component={SignUpLogin}/>
-        <Route path = "/events" component={TournamentPage}/>
-        <Route path = "/about" component={aboutPage}/>
-        <Route path = "/standings" component={StandingsPage}/>
-      </Switch>
+	  <StoreProvider>
+		<Switch>
+			<Route exact path = "/" component={HomePage}/>
+			<Route path = "/news" component={newsPage}/>
+			<Route path = "/auth" component={SignUpLogin}/>
+			<Route path = "/events" component={TournamentPage}/>
+			<Route path = "/about" component={aboutPage}/>
+			<Route path = "/standings" component={StandingsPage}/>
+		</Switch>
+	  </StoreProvider>
   );
 }
 
