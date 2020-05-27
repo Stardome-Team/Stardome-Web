@@ -50,7 +50,7 @@
 	border-radius: 20px;
 	border: 1px solid #457FFF;
 	background-color: #457FFF;
-	color: #FFFFFF;
+	color: #000000;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
@@ -69,11 +69,11 @@
 
 .Forms button.ghost {
 	background-color: transparent;
-	border-color: #FFFFFF;
+	border-color: #000;
 }
 
 .Forms form {
-	background-color: #FFFFFF;
+	background-color: #c4c4c4;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -184,7 +184,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
-	color: #FFFFFF;
+	color: #000;
 	position: relative;
 	left: -100%;
 	height: 100%;
