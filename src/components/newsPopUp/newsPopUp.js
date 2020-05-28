@@ -1,35 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './newsPopUp.scss'
 
-export default class NewPopUp extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = 
-        {
-            showPopUp: true
-        }
-        this.toggleShowPopUp = this.toggleShowPopUp.bind(this);
-    }
+const NewPopUp = (props) => {
 
+    const [showPopUp, setShowPopUp] = useState(true)
 
-    toggleShowPopUp = () =>
+    const toggleShowPopUp = () =>
     {
-        this.setState({
-            showPopUp: !this.state.showPopUp
-        });
-        this.changeProps()
+        setShowPopUp(prevState => !prevState)
+        changeProps()
     }
-    changeProps = () => {
-        this.props.setChanged();
+    const changeProps = () => {
+        props.setChanged();
     }
-    render(){
-        const {showPopUp} = this.state;
     return (
         <div className="particpate-pop-up">
-           <div style={{display: this.state.showPopUp ? 'block' : 'none' }} class="w3-modal">
+           <div style={{display: showPopUp ? 'block' : 'none' }} class="w3-modal">
                 <div class="w3-modal-content w3-card-3" id="back-layer">
                 <header class="w3-container" id="popup-header"> 
-                    <span id="close-button" onClick={this.toggleShowPopUp}
+                    <span id="close-button" onClick={toggleShowPopUp}
                     class="w3-button w3-display-topright">
                         <i class="fas fa-times" style={{fontSize: "x-large"}}></i>
                     </span>
@@ -44,5 +33,6 @@ export default class NewPopUp extends React.Component {
             </div>
         </div>
         )
-    }   
 }
+
+export default NewPopUp
