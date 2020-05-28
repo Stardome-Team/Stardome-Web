@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './participate.scss'
 
-const Participate = () => {
+const Participate = (props) => {
     
     const [showPopUp, setShowPopUp] = useState(true)
     

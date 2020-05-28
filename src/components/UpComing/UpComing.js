@@ -1,44 +1,42 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import SCHEDULE  from "../schedule.data";
 import Filter from "./Filter/Filter";
 import TournamentList from "./TournamentList/TournamentList";
 import "./UpComing.scss";
 
-export default class UpComing extends Component 
+const UpComing = () => 
 {
-    state =
-    {
-        categories:["adventure","football"],
-        search:"",
-        selectedCategory:"adventure",
-        events: SCHEDULE[0].event
-    }
+    
+    const [categories, setCategories] = useState(["adventure","football"])
+    const [search, setSearch] = useState("")
+    const [selectedCategory, setSelectedCategory] = useState("adventure")
+    const [events, setEvents] = useState(SCHEDULE[0].event)
 
-    updateSearch = event =>
+    const updateSearch = event =>
     {
         const value = event.target.value.trim();
 
         if(value)
         {
-            this.setState({search:value})
+            setSearch(value)
         }
     }
 
-    updateCategory = event =>
+    const updateCategory = event =>
     {
-        const value = this.state.categories[event.target.selectedIndex];
-        this.setState({selectedCategory:value});        
+        const value = categories[event.target.selectedIndex];
+        setSelectedCategory(value);        
     }
 
-    render() {
         return (
             <div className="UpComingWrapper">
                 <Filter 
-                search={this.state.search}
-                changeCat = {this.updateCategory}
-                update={this.updateSearch} categories={this.state.categories}/>
-                <TournamentList events={this.state.events} />                
+                search={search}
+                changeCat = {updateCategory}
+                update={updateSearch} categories={categories}/>
+                <TournamentList events={events} />                
             </div>
         )
-    }
 }
+
+export default UpComing
