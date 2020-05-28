@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import Logo from "../../assets/img/stardome_logo.png";
 import Facebook from "../../assets/img/facebook.png";
@@ -8,24 +8,17 @@ import Youtube from "../../assets/img/youtube.png";
 import SideBar from './sideBar'
 import './navbar.scss';
 
-class NavBar extends Component {
-  constructor() {
-    super();
-    this.state = {
-      showHideSidebar: false
-    };
-    this.hideComponent = this.hideComponent.bind(this);
-  }
+const NavBar = () => {
 
-  hideComponent(name) {
+  const [showHideSidebar, setShowHideSidebar] = useState(false)
+
+  const hideComponent = (name) => {
     switch (name) {
       case "showHideSidebar":
-        this.setState({ showHideSidebar: !this.state.showHideSidebar });
+        setShowHideSidebar(prevState => !prevState)
         break;
     }
   }
-  render() {
-    const {showHideSidebar} = this.state;
     return (
       <div className="z-index nav-collection">
         <div className="w3-top w3-container w3-hide-medium w3-hide-small w3-bar w3-black">
@@ -87,7 +80,7 @@ class NavBar extends Component {
             >
               <a
                 href="#"
-                onClick={() => this.hideComponent("showHideSidebar")}
+                onClick={() => hideComponent("showHideSidebar")}
                 style={{ textDecoration: "none" }}
               >
                 <i className="fas fa-bars"></i>
@@ -97,7 +90,6 @@ class NavBar extends Component {
         </div>
       </div>
     );
-  }
 }
 
 export default NavBar;
