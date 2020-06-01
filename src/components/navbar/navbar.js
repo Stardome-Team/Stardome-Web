@@ -6,10 +6,11 @@ import Instagram from "../../assets/img/instagram.png";
 import Twitter from "../../assets/img/twitter.png";
 import Youtube from "../../assets/img/youtube.png";
 import SideBar from './sideBar'
+import Context from '../../store/context'
 import './navbar.scss';
 
 const NavBar = () => {
-
+  const context = useContext(Context)
   const [showHideSidebar, setShowHideSidebar] = useState(false)
 
   const hideComponent = (name) => {
@@ -58,7 +59,10 @@ const NavBar = () => {
             <Link id = "socials" className="w3-bar-item w3-right" to="/auth"> <img alt="Youtube logo" src={Youtube} /></Link>
 
             {/* <Link className="w3-bar-item w3-button w3-right" to="/auth"> <img alt="Facebook logo" src={Facebook} /></Link> */}
-
+            {!context.authState
+            ? <button onClick={() => context.authObj.login()}>Login</button>
+            : <button onClick={() => context.authObj.logout()}>Logout</button>
+            }
          
         </div>
         <div className="w3-main w3-top w3-black w3-hide-large">

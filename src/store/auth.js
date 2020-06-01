@@ -1,4 +1,12 @@
 import history from './history';
+import React, { 
+	useState, 
+	createContext,
+	useCallback,
+	useEffect
+} from 'react';
+
+import ls, { set, get } from "local-storage";
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
@@ -9,10 +17,23 @@ export default class Auth {
     scope: 'openid profile email'
   })
 
+  fakeAuth = {
+    isAuthenticated: false,
+    authenticate(cb) {
+      this.isAuthenticated = true
+      setTimeout(cb, 100) // fake async
+    },
+    signout(cb) {
+      this.isAuthenticated = false
+      setTimeout(cb, 100) // fake async
+    }
+  }
+
   userProfile = {}
 
   login = () => {
-      this.auth0.authorize()
+    //   this.auth0.authorize()
+      this.fakeAuth.authenticate()
   }
 
   handleAuth = () => {
