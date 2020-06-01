@@ -1,9 +1,11 @@
 import React, { useState} from "react";
 import styles from "./forms.module.css";
 import NavBar from '../../components/navbar/navbar';
-import Footer from '../../components/footer/footer'
+import Footer from '../../components/footer/footer';
+import Context from '../../store/context';
 
 const Forms = () => {
+  const context = useContext(Context)
   const [signIn, setSignIn] = useState(true)
   const [signUp, setSignUp] = useState(false)
 
@@ -91,7 +93,11 @@ const Forms = () => {
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
                 <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                {!context.authState
+                ? <button onClick={() => context.authObj.login()}>Sign In</button>
+                : <button onClick={() => context.authObj.logout()}>Logout</button>
+                }
+                
               </form>
 
               <div className={styles.hiddenLarge}>

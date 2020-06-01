@@ -6,16 +6,16 @@ import React, {
 	useEffect
 } from 'react';
 
-import ls, { set, get } from "local-storage";
+import localStorage, { set, get } from "local-storage";
 
 export default class Auth {
-  auth0 = new auth0.WebAuth({
-    domain: 'webapp1.auth0.com',
-    clientID: '',
-    redirectUri: 'http://localhost:3000/callback',
-    responseType: 'token id_token',
-    scope: 'openid profile email'
-  })
+//   auth0 = new auth0.WebAuth({
+//     domain: 'webapp1.auth0.com',
+//     clientID: '',
+//     redirectUri: 'http://localhost:3000/callback',
+//     responseType: 'token id_token',
+//     scope: 'openid profile email'
+//   })
 
   fakeAuth = {
     isAuthenticated: false,
