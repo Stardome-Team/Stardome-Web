@@ -1,5 +1,6 @@
 import React from 'react';
 import ContextState from './store/context_state_config';
+import Routes from './routes'
 
 const App = () => {
 

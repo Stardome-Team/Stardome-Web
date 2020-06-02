@@ -21,7 +21,7 @@ function Routes() {
 	  )
 	const context = useContext(Context)
   return(
-		  <Router history={history}>
+		<Router history={history}>
 			<Switch>
 				<Route exact path = "/" component={HomePage}/>
 				<Route path = "/news" component={newsPage}/>
