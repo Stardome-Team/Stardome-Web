@@ -1,11 +1,10 @@
 import React, { useReducer } from 'react';
 import Context from './context';
 import * as ACTIONS from './actions/actions';
-
+import Routes from '../routes'
 import * as Reducer1 from './reducers/plain_reducer';
 import * as AuthReducer from './reducers/auth_reducer';
-import * as FormReducer from './reducers/form_reducer';
-import Routes from './routes';
+import * as FormReducer from './reducers/former_reducer';
 
 import Auth from './auth';
 
@@ -17,8 +16,7 @@ const ContextState = () => {
     /*
         Plain Reducer
     */
-    const [stateReducer1, dispatchReducer1] = useReducer(Reducer1.Reducer1,
-                                                         Reducer1.initialState)
+    const [stateReducer1, dispatchReducer1] = useReducer(Reducer1.Reducer1,Reducer1.initialState)
 
 
     const handleDispatchTrue = () => {
@@ -36,8 +34,7 @@ const ContextState = () => {
     /*
       Auth Reducer
     */
-    const [stateAuthReducer, dispatchAuthReducer] =                      useReducer(AuthReducer.AuthReducer,
-                                                           AuthReducer.initialState)
+    const [stateAuthReducer, dispatchAuthReducer] = useReducer(AuthReducer.AuthReducer,AuthReducer.initialState)
 
 
     const handleLogin = () => {

@@ -5,10 +5,8 @@ import TwitterFeed from '../../components/twitterFeed/twitterFeed';
 import HomePageCarousel from '../../components/homePageCarousel/homepagecarousel';
 import Footer from '../../components/footer/footer'
 import NewsFeed from '../../components/newsFeed/newsFeed';
-import { StoreContext } from '../../store';
 
 const HomePage = () => {
-  const token = useContext(StoreContext).token
   
   return (
 	<div className="homepage">
