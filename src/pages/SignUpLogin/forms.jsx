@@ -1,5 +1,5 @@
-import React, { useState , useContext } from "react";
-import { Link, Redirect } from "react-router-dom";
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import styles from "./forms.module.css";
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
@@ -8,16 +8,27 @@ import { useAuth } from "../../context/auth";
 
 const Forms = (props) => {
 
-    const referer = props.location.state.referer || '/';
+  // const referer = props.location.state.referer || '/';
+  const [redirectToReferrer, setRedirectToReferrer] = useState(false)
 
-    const [isLoggedIn, setLoggedIn] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const { authTokens, setAuthTokens } = useAuth();
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { authTokens, setAuthTokens } = useAuth();
   
   const [signIn, setSignIn] = useState(true)
   const [signUp, setSignUp] = useState(false)
+  
+  if (isLoggedIn) {
+    setRedirectToReferrer(true)
+  } 
+  
+  const from = props.location.state || { from: { pathname: '/' } }
+
+  if (redirectToReferrer === true) {
+    return <Redirect to={from} />
+  }
 
   const showSignUp = (e) => {
     e.preventDefault();
@@ -45,11 +56,6 @@ const Forms = (props) => {
     }).catch(e => {
       setIsError(true);
     });
-  }
-
-
-  if (isLoggedIn) {
-    return <Redirect to={referer} />;
   }
 
   const Error = <div style={{backgroundColor: 'red'}}></div>
