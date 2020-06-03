@@ -1,11 +1,21 @@
 import React, { useState , useContext } from "react";
+import { Link, Redirect } from "react-router-dom";
 import styles from "./forms.module.css";
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
-import Context from '../../store/context';
+import axios from 'axios';
+import { useAuth } from "../../context/auth";
 
-const Forms = () => {
-  const context = useContext(Context)
+const Forms = (props) => {
+
+    const referer = props.location.state.referer || '/';
+
+    const [isLoggedIn, setLoggedIn] = useState(false);
+    const [isError, setIsError] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const { authTokens, setAuthTokens } = useAuth();
+  
   const [signIn, setSignIn] = useState(true)
   const [signUp, setSignUp] = useState(false)
 
@@ -20,6 +30,33 @@ const Forms = () => {
     setSignIn(true);
     setSignUp(false);
   };
+
+  function postLogin() {
+    axios.post("https://www.somePlace.com/auth/login", {
+      email,
+      password
+    }).then(result => {
+      if (result.status === 200) {
+        setAuthTokens(result.data);
+        setLoggedIn(true);
+      } else {
+        setIsError(true);
+      }
+    }).catch(e => {
+      setIsError(true);
+    });
+  }
+
+
+  if (isLoggedIn) {
+    return <Redirect to={referer} />;
+  }
+
+  const Error = <div style={{backgroundColor: 'red'}}></div>
+
+  function logOut() {
+    setAuthTokens();
+  }
 
     return (
       <div className={styles.bg}>
@@ -90,16 +127,30 @@ const Forms = () => {
 					<a href="#" className="social"><FontAwesomeIcon icon="LinkedIn"/></a> */}
                 </div>
                 <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input 
+                  type="email"  
+                  placeholder="Email"
+                  value={email}
+                  onChange={e => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <input 
+                  type="password" 
+                  value={password}
+                  onChange={e => {
+                    setPassword(e.target.value);
+                  }} 
+                  placeholder="Password" 
+                />
                 <a href="#">Forgot your password?</a>
-                {!context.authState
-                ? <button onClick={() => context.authObj.login()}>Sign In</button>
-                : <button onClick={() => context.authObj.logout()}>Logout</button>
+                {!authTokens
+                ? <button type="submit" onClick={postLogin}>Sign In</button>
+                : <button onClick={logOut}>Logout</button>
                 }
                 
               </form>
-
+              { isError &&<Error>The username or password provided were incorrect!</Error> }
               <div className={styles.hiddenLarge}>
                 <p>No Account ? </p>
                 <button
