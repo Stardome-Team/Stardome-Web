@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Route, Router, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import { AuthContext } from "./context/auth";
 import PrivateRoute from './context/privateroutes'
 import HomePage from './pages/homepage/homePage';
