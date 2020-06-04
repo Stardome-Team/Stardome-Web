@@ -8,20 +8,60 @@ import StandingsPage from './pages/standings/standingsPage';
 import newsPage from './pages/newspage/newspage';
 import SignUpLogin from './pages/SignUpLogin/forms';
 import aboutPage from './pages/aboutpage/aboutpage'
+import axios from 'axios';
 
 const App = (props) => {
-
-  const existingTokens = JSON.parse(localStorage.getItem("tokens"));
   
-  const [authTokens, setAuthTokens] = useState(localStorage.getItem('authTokens') || '');
-    
-  const setTokens = (data) => {
-    localStorage.setItem("tokens", JSON.stringify(data));
-    setAuthTokens(data);
+  const newAxios = axios.create();
+
+  newAxios.interceptors.request.use((config)=>{
+      const token = localStorage.getItem("token");
+      config.headers.Authorization = `Bearer ${token}`;
+      return config;
+  })
+  
+  const [authTokens, setAuthTokens] = useState(localStorage.getItem("token") || "");
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || {})
+
+  const postSignUp = (userInfo) => {
+    return newAxios.post("/auth/signup", userInfo)
+      .then(response => {
+        const { user, token } = response.data
+        localStorage.setItem("token", token);
+        localStorage.setItem("user", JSON.stringify(user));
+        setUser(user)
+        setAuthTokens(token)
+        return response;
+    })
+  }
+
+  const postLogin = (credentials) => {
+    return newAxios.post("/auth/login", credentials)
+        .then(response => {
+            const { token, user } = response.data;
+            localStorage.setItem("token", token)
+            localStorage.setItem("user", JSON.stringify(user))
+            setUser(user)
+            setAuthTokens(token)
+            // Don't forget to get this newly-logged-in user's todos!
+            this.getTodos();
+            return response;
+        })
+  }
+
+  const logout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    setAuthTokens('')
+    setUser({})
   }
 
   return(
-    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+    <AuthContext.Provider value={{ 
+      signup: postSignUp,
+      login: postLogin,
+      logout: logout
+      }}>
       <Router>
         <Switch>
           <Route exact path = "/" component={HomePage}/>
@@ -31,6 +71,7 @@ const App = (props) => {
           <Route path = "/about" component={aboutPage}/>
           {/* <Route path = "/standings" component={StandingsPage}/> */}
           <PrivateRoute path="/standings" component={StandingsPage} />
+          
         </Switch>
       </Router>
     </AuthContext.Provider>

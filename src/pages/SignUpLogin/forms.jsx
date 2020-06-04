@@ -13,12 +13,19 @@ const Forms = (props) => {
 
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newUsername, setNewUsername] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const { authTokens, setAuthTokens } = useAuth();
+
+  const clearInputs = () => {
+    setEmail('')
+    setPassword('')
+    setErrorMessage('')
+  }
   
   const [signIn, setSignIn] = useState(true)
   const [signUp, setSignUp] = useState(false)
@@ -44,11 +51,23 @@ const Forms = (props) => {
     setSignIn(true);
     setSignUp(false);
   };
-  
-  const Error = <div style={{backgroundColor: 'red'}}></div>
 
-  function logOut() {
-    setAuthTokens();
+  const handleSignUpSubmit = (e) => {
+    e.preventDefault();
+        this.props.signup(this.state)
+            .then(() => this.clearInputs())
+            .catch(err => {
+                setErrorMessage(err.data)
+            })
+  }
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    this.props.login(this.state)
+        .then(() => this.clearInputs())
+        .catch(err => {
+            setErrorMessage(err.data)
+        })
   }
 
     return (
@@ -60,7 +79,7 @@ const Forms = (props) => {
             <div
               className={styles.formContainer + " " + styles.signUpContainer}
             >
-              <form action="#">
+              <form action="#" onSubmit={handleSignUpSubmit}>
                 <h1>Create Account</h1>
                 <div className={styles.socialContainer}>
                   {/* <a href="#" className="social"><FontAwesomeIcon icon="faFacebookF"/></a>
@@ -94,7 +113,10 @@ const Forms = (props) => {
                 />
                 <button>Sign Up</button>
               </form>
-            
+              {
+                errorMessage &&
+                <p style={{color: "red"}}>{errorMessage}</p>
+              }
 			
               <div className={styles.hiddenLarge}>
                 <p>Have an account ? </p>
@@ -133,7 +155,7 @@ const Forms = (props) => {
             <div
               className={styles.formContainer + " " + styles.signInContainer}
             >
-              <form action="#">
+              <form action="#" onSubmit={handleLoginSubmit}>
                 <h1>Sign in</h1>
                 <div className={styles.socialContainer}>
                   {/* <a href="#" className="social"><FontAwesomeIcon icon="Facebook"/></a>
@@ -158,13 +180,17 @@ const Forms = (props) => {
                   placeholder="Password" 
                 />
                 <a href="#">Forgot your password?</a>
-                {authTokens
+                {!authTokens
                 ? <button type="submit">Sign In</button>
-                : <button onClick={logOut}>Logout</button>
+                : <button onClick={props.logout}>Logout</button>
                 }
-                
               </form>
-              { isError &&<Error>The username or password provided were incorrect!</Error> }
+
+              {
+                errorMessage &&
+                <p style={{color: "red"}}>{errorMessage}</p>
+              }
+
               <div className={styles.hiddenLarge}>
                 <p>No Account ? </p>
                 <button
