@@ -12,7 +12,7 @@ import aboutPage from './pages/aboutpage/aboutpage'
 const App = (props) => {
 
   const existingTokens = JSON.parse(localStorage.getItem("tokens"));
-  // const [authTokens, setAuthTokens] = useState(existingTokens);
+  
   const [authTokens, setAuthTokens] = useState(localStorage.getItem('authTokens') || '');
     
   const setTokens = (data) => {

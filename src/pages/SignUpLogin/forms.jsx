@@ -15,6 +15,9 @@ const Forms = (props) => {
   const [isError, setIsError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [newUsername, setNewUsername] = useState("");
+  const [newEmail, setNewEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const { authTokens, setAuthTokens } = useAuth();
   
   const [signIn, setSignIn] = useState(true)
@@ -41,21 +44,48 @@ const Forms = (props) => {
     setSignIn(true);
     setSignUp(false);
   };
-
-  function postLogin() {
-    axios.post("https://www.somePlace.com/auth/login", {
-      email,
-      password
-    }).then(result => {
-      if (result.status === 200) {
-        setAuthTokens(result.data);
-        setLoggedIn(true);
-      } else {
+  
+  function postLogin (){
+    fetch('http://localhost:3000/login', {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.status === 200) {
+          setAuthTokens(result.data);
+          setLoggedIn(true);
+        } else {
+          setIsError(true);
+        }
+      }).catch(e => {
         setIsError(true);
-      }
-    }).catch(e => {
-      setIsError(true);
-    });
+      });
+  }
+
+  function postSignUp (){
+    try {
+    fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email: newEmail,
+        password: newPassword,
+        username: newUsername
+      })
+    })
+      .then(response => response.json())
+      .then(user => {
+        if (user.id) {
+          
+        }
+      })
+    } 
+    catch (e){console.log(e)}
   }
 
   const Error = <div style={{backgroundColor: 'red'}}></div>
@@ -81,10 +111,31 @@ const Forms = (props) => {
 				<a href="#" className="social"><FontAwesomeIcon icon="LinkedIn"/></a> */}
                 </div>
                 <span>or use your email for registration</span>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button>Sign Up</button>
+                <input 
+                  type="text" 
+                  placeholder="username" 
+                  value={email}
+                  onChange={e => {
+                    setNewUsername(e.target.value);
+                  }}
+                />
+                <input 
+                  type="email" 
+                  placeholder="Email" 
+                  value={email}
+                  onChange={e => {
+                    setNewEmail(e.target.value);
+                  }}
+                />
+                <input 
+                  type="password" 
+                  placeholder="Password" 
+                  value={email}
+                  onChange={e => {
+                    setNewPassword(e.target.value);
+                  }}
+                />
+                <button onClick={postSignUp}>Sign Up</button>
               </form>
             
 			
@@ -150,7 +201,7 @@ const Forms = (props) => {
                   placeholder="Password" 
                 />
                 <a href="#">Forgot your password?</a>
-                {!authTokens
+                {authTokens
                 ? <button type="submit" onClick={postLogin}>Sign In</button>
                 : <button onClick={logOut}>Logout</button>
                 }
