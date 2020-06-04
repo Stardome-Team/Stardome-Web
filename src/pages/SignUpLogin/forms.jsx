@@ -45,49 +45,6 @@ const Forms = (props) => {
     setSignUp(false);
   };
   
-  function postLogin (){
-    fetch('http://localhost:3000/login', {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email: email,
-        password: password
-      })
-    })
-      .then(response => response.json())
-      .then(result => {
-        if (result.status === 200) {
-          setAuthTokens(result.data);
-          setLoggedIn(true);
-        } else {
-          setIsError(true);
-        }
-      }).catch(e => {
-        setIsError(true);
-      });
-  }
-
-  function postSignUp (){
-    try {
-    fetch('http://localhost:3000/register', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email: newEmail,
-        password: newPassword,
-        username: newUsername
-      })
-    })
-      .then(response => response.json())
-      .then(user => {
-        if (user.id) {
-          
-        }
-      })
-    } 
-    catch (e){console.log(e)}
-  }
-
   const Error = <div style={{backgroundColor: 'red'}}></div>
 
   function logOut() {
@@ -135,7 +92,7 @@ const Forms = (props) => {
                     setNewPassword(e.target.value);
                   }}
                 />
-                <button onClick={postSignUp}>Sign Up</button>
+                <button>Sign Up</button>
               </form>
             
 			
@@ -202,7 +159,7 @@ const Forms = (props) => {
                 />
                 <a href="#">Forgot your password?</a>
                 {authTokens
-                ? <button type="submit" onClick={postLogin}>Sign In</button>
+                ? <button type="submit">Sign In</button>
                 : <button onClick={logOut}>Logout</button>
                 }
                 
