@@ -43,8 +43,6 @@ const App = (props) => {
             localStorage.setItem("user", JSON.stringify(user))
             setUser(user)
             setAuthTokens(token)
-            // Don't forget to get this newly-logged-in user's todos!
-            this.getTodos();
             return response;
         })
   }
