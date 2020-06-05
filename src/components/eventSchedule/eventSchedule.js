@@ -4,24 +4,13 @@ import SCHEDULE from '../schedule.data'
 import './eventSchedule.scss';
 
 const EventSchedule = (props) => {
-
-    const [weekCount, setWeekCount] = useState(1)
-      
-    const incrementWeekClicked = () => {
-        setWeekCount(prevState => prevState+1)
-      }
-
-    const decrementWeekClicked = () =>  {
-        setWeekCount(prevState => prevState-1)
-      }
-      
     return (      
     <div className="container">
-        <div className="week-counter">
+        {/* <div className="week-counter">
             <i style={{fontSize: "xxx-large"}} onClick={decrementWeekClicked} class="fas fa-caret-left"></i>
                 <div className="week-counter display">Week {weekCount}</div>
             <i style={{fontSize: "xxx-large"}} onClick={incrementWeekClicked} class="fas fa-caret-right"></i>
-        </div>
+        </div> */}
 
         <div id="schedule" className="daily-schedule">
             <div className="daily-schedule date day">Mon 
