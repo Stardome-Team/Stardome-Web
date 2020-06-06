@@ -21,12 +21,7 @@ const EventList = ({events}) =>  {
                     <div className="week-counter display">Week {weekCount}</div>
                 <i style={{fontSize: "xxx-large"}} onClick={incrementWeekClicked} class="fas fa-caret-right"></i>
             </div>
-            {events.map( (ev,i) =>
-                {
-                    return(
-                        <EventSchedule key={`${ev.name}${i}`} name={ev.name} date={ev.date} />
-                    );
-                } )}
+            <EventSchedule />
         </div>
     )
 }

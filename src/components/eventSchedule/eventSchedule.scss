@@ -1,6 +1,5 @@
 
 .container{
-    margin-top: 70px;
     width: fit-content;
     display: block;
     margin-left: auto;
@@ -14,7 +13,7 @@
     margin-bottom: 20px;
     &.display{
         font-size: x-large;
-        margin: 25px 10px 0 10px;
+        margin: 5px 10px 0 10px;
     }
 }
 .daily-schedule{
@@ -72,6 +71,9 @@
         display: flow-root;
     }
     &.name{
+        color: #EC4E20;
+    }
+    &.list{
         color: #EC4E20;
     }
     
