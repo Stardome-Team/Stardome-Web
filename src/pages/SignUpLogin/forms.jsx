@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import {withContext} from "../../App";
 import { Redirect } from "react-router-dom";
 import styles from "./forms.module.css";
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
-import axios from 'axios';
 import { useAuth } from "../../context/auth";
 
 const Forms = (props) => {
@@ -16,6 +16,7 @@ const Forms = (props) => {
   const [errorMessage, setErrorMessage] = useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [credentials, setCredentials] = useState({})
   const [newUsername, setNewUsername] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -29,6 +30,7 @@ const Forms = (props) => {
   
   const [signIn, setSignIn] = useState(true)
   const [signUp, setSignUp] = useState(false)
+  
   
   if (isLoggedIn) {
     setRedirectToReferrer(true)
@@ -54,7 +56,7 @@ const Forms = (props) => {
 
   const handleSignUpSubmit = (e) => {
     e.preventDefault();
-        this.props.signup(this.state)
+        props.signup(this.state)
             .then(() => this.clearInputs())
             .catch(err => {
                 setErrorMessage(err.data)
@@ -62,9 +64,13 @@ const Forms = (props) => {
   }
 
   const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    this.props.login(this.state)
-        .then(() => this.clearInputs())
+    e.preventDefault();  
+    setCredentials({
+      email: 'oyefesotunmise@gmail.com',
+      password: 'okototesting'
+    })
+    props.fakelogin(credentials)
+        .then(() => this.clearInputs(e))
         .catch(err => {
             setErrorMessage(err.data)
         })
@@ -79,7 +85,7 @@ const Forms = (props) => {
             <div
               className={styles.formContainer + " " + styles.signUpContainer}
             >
-              <form action="#" onSubmit={handleSignUpSubmit}>
+              <form action="#" onSubmit={(e) => handleSignUpSubmit(e)}>
                 <h1>Create Account</h1>
                 <div className={styles.socialContainer}>
                   {/* <a href="#" className="social"><FontAwesomeIcon icon="faFacebookF"/></a>
@@ -155,7 +161,7 @@ const Forms = (props) => {
             <div
               className={styles.formContainer + " " + styles.signInContainer}
             >
-              <form action="#" onSubmit={handleLoginSubmit}>
+              <form action="#" onSubmit={(e) => handleLoginSubmit(e)}>
                 <h1>Sign in</h1>
                 <div className={styles.socialContainer}>
                   {/* <a href="#" className="social"><FontAwesomeIcon icon="Facebook"/></a>
@@ -182,7 +188,7 @@ const Forms = (props) => {
                 <a href="#">Forgot your password?</a>
                 {!authTokens
                 ? <button type="submit">Sign In</button>
-                : <button onClick={props.logout}>Logout</button>
+                : <button onClick={() => props.logout}>Logout</button>
                 }
               </form>
 

@@ -6,12 +6,6 @@ const EventSchedule = (props) => {
     const [events, setEvents] = useState(SCHEDULE[0].event)
     return (      
     <div className="container">
-        {/* <div className="week-counter">
-            <i style={{fontSize: "xxx-large"}} onClick={decrementWeekClicked} class="fas fa-caret-left"></i>
-                <div className="week-counter display">Week {weekCount}</div>
-            <i style={{fontSize: "xxx-large"}} onClick={incrementWeekClicked} class="fas fa-caret-right"></i>
-        </div> */}
-
         <div id="schedule" className="daily-schedule">
             <div className="daily-schedule date day">Mon 
             <div className="daily-schedule date other">May 14</div></div>

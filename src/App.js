@@ -47,6 +47,16 @@ const App = (props) => {
         })
   }
 
+  const fakeLogin = (credentials) => {
+    const token = '123test'
+    localStorage.setItem("token", token)
+    localStorage.setItem("user", credentials)
+    setUser(user)
+    setAuthTokens(token)
+    console.log(user)
+    console.log(token)
+  }
+
   const logout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
@@ -58,6 +68,7 @@ const App = (props) => {
     <AuthContext.Provider value={{ 
       signup: postSignUp,
       login: postLogin,
+      fakelogin: fakeLogin,
       logout: logout
       }}>
       <Router>
@@ -77,3 +88,32 @@ const App = (props) => {
 }
 
 export default App;
+
+export const withContext = Component => {
+  return props => {
+      return (
+          <AuthContext.Consumer>
+              {
+                  globalState => {
+                      return (
+                          <Component
+                              {...globalState}
+                              {...props}
+                          />
+                      )
+                  }
+              }
+          </AuthContext.Consumer>
+      )
+  }
+}
+
+// export function withContext(Component) {
+// 	return function contextComponent(props) {
+// 		return (
+// 			<AuthContext.Consumer>
+// 				{context => <Component {...props} context={context} />}
+// 			</AuthContext.Consumer>
+// 		)
+// 	}
+// }
