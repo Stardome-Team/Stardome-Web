@@ -21,7 +21,7 @@ const App = (props) => {
   })
   
   const [authTokens, setAuthTokens] = useState(localStorage.getItem("token") || "");
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || {})
+  const [user, setUser] = useState((localStorage.getItem("user")) || {})
 
   const postSignUp = (userInfo) => {
     return newAxios.post("/auth/signup", userInfo)
@@ -51,7 +51,6 @@ const App = (props) => {
     const token = '123test'
     localStorage.setItem("token", token)
     localStorage.setItem("user", credentials)
-    setUser(user)
     setAuthTokens(token)
     console.log(user)
     console.log(token)

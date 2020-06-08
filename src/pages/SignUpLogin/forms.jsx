@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
 import {withContext} from "../../App";
 import { Redirect } from "react-router-dom";
 import styles from "./forms.module.css";
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
-import { useAuth } from "../../context/auth";
+import { useAuth, AuthContext } from "../../context/auth";
 
 const Forms = (props) => {
 
+  const context = useContext(AuthContext)
   // const referer = props.location.state.referer || '/';
   const [redirectToReferrer, setRedirectToReferrer] = useState(false)
 
@@ -69,11 +70,14 @@ const Forms = (props) => {
       email: 'oyefesotunmise@gmail.com',
       password: 'okototesting'
     })
-    props.fakelogin(credentials)
-        .then(() => this.clearInputs(e))
-        .catch(err => {
-            setErrorMessage(err.data)
-        })
+    context.fakelogin = (credentials) => {
+      console.log(credentials)
+    }
+
+        // .then(() => this.clearInputs(e))
+        // .catch(err => {
+        //     setErrorMessage(err.data)
+        // })
   }
 
     return (
