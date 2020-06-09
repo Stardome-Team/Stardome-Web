@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-// import { AuthContext } from "./context/auth";
+import Forms from './pages/SignUpLogin/forms'
 import PrivateRoute from './context/privateroutes'
 import HomePage from './pages/homepage/homePage';
 import TournamentPage from './pages/tournaments/tournament';
@@ -72,6 +72,7 @@ const App = (props) => {
       fakelogin: fakeLogin,
       logout: logout
       }}>
+      {/* <Forms/> */}
       <Router>
         <Switch>
           <Route exact path = "/" component={HomePage}/>
@@ -90,31 +91,21 @@ const App = (props) => {
 
 export default App;
 
-export const withContext = Component => {
-  return props => {
-      return (
-          <AuthContext.Consumer>
-              {
-                  globalState => {
-                      return (
-                          <Component
-                              {...globalState}
-                              {...props}
-                          />
-                      )
-                  }
-              }
-          </AuthContext.Consumer>
-      )
-  }
-}
-
-// export function withContext(Component) {
-// 	return function contextComponent(props) {
-// 		return (
-// 			<AuthContext.Consumer>
-// 				{context => <Component {...props} context={context} />}
-// 			</AuthContext.Consumer>
-// 		)
-// 	}
+// export const withContext = Component => {
+//   return props => {
+//       return (
+//           <AuthContext.Consumer>
+//               {
+//                   globalState => {
+//                       return (
+//                           <Component
+//                               {...globalState}
+//                               {...props}
+//                           />
+//                       )
+//                   }
+//               }
+//           </AuthContext.Consumer>
+//       )
+//   }
 // }

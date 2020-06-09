@@ -7,7 +7,7 @@ import Footer from '../../components/footer/footer';
 
 const Forms = (props) => {
 
-  const context = React.useContext(AuthContext)
+  const contxt = React.useContext(AuthContext)
 
   // const referer = props.location.state.referer || '/';
   const [redirectToReferrer, setRedirectToReferrer] = useState(false)
@@ -21,7 +21,7 @@ const Forms = (props) => {
   const [newUsername, setNewUsername] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
-  // const { authTokens, setAuthTokens } = useAuth();
+  const [authTokens, setAuthTokens] = useState(localStorage.getItem("token"))
 
   const clearInputs = () => {
     setEmail('')
@@ -64,13 +64,13 @@ const Forms = (props) => {
             })
   }
 
-  const handleLoginSubmit = (credentials) => {
-    // e.preventDefault();  
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();  
     setCredentials({
       email: 'oyefesotunmise@gmail.com',
       password: 'okototesting'
     })
-    context.fakelogin = (credentials) => {
+    contxt.fakelogin = (credentials) => {
       console.log('CREDENTIALS',credentials.password)
     }
 
@@ -165,7 +165,7 @@ const Forms = (props) => {
             <div
               className={styles.formContainer + " " + styles.signInContainer}
             >
-              <form action="#" onSubmit={() => handleLoginSubmit(credentials)}>
+              <form action="#" onSubmit={(e) => handleLoginSubmit(e)}>
                 <h1>Sign in</h1>
                 <div className={styles.socialContainer}>
                   {/* <a href="#" className="social"><FontAwesomeIcon icon="Facebook"/></a>
@@ -190,10 +190,10 @@ const Forms = (props) => {
                   placeholder="Password" 
                 />
                 <a href="#">Forgot your password?</a>
-                {/* {!authTokens */}
+                {/* {!authTokens ? */}
                 <button type="submit">Sign In</button>
-                {/* : <button onClick={() => props.logout}>Logout</button>
-                } */}
+                {/* // : <button onClick={() => contxt.logout}>Logout</button> */}
+                {/* } */}
               </form>
 
               {
