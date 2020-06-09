@@ -9,6 +9,7 @@ import { useAuth, AuthContext } from "../../context/auth";
 const Forms = (props) => {
 
   const context = useContext(AuthContext)
+
   // const referer = props.location.state.referer || '/';
   const [redirectToReferrer, setRedirectToReferrer] = useState(false)
 
@@ -21,7 +22,7 @@ const Forms = (props) => {
   const [newUsername, setNewUsername] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
-  const { authTokens, setAuthTokens } = useAuth();
+  // const { authTokens, setAuthTokens } = useAuth();
 
   const clearInputs = () => {
     setEmail('')
@@ -71,7 +72,7 @@ const Forms = (props) => {
       password: 'okototesting'
     })
     context.fakelogin = (credentials) => {
-      console.log(credentials)
+      console.log('CREDENTIALS',credentials)
     }
 
         // .then(() => this.clearInputs(e))
@@ -190,10 +191,10 @@ const Forms = (props) => {
                   placeholder="Password" 
                 />
                 <a href="#">Forgot your password?</a>
-                {!authTokens
-                ? <button type="submit">Sign In</button>
-                : <button onClick={() => props.logout}>Logout</button>
-                }
+                {/* {!authTokens */}
+                <button type="submit">Sign In</button>
+                {/* : <button onClick={() => props.logout}>Logout</button>
+                } */}
               </form>
 
               {
