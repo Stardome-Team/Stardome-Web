@@ -1,14 +1,13 @@
 import React, { useState , useContext } from "react";
-import {withContext} from "../../App";
+import {AuthContext} from "../../App";
 import { Redirect } from "react-router-dom";
 import styles from "./forms.module.css";
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
-import { useAuth, AuthContext } from "../../context/auth";
 
 const Forms = (props) => {
 
-  const context = useContext(AuthContext)
+  const context = React.useContext(AuthContext)
 
   // const referer = props.location.state.referer || '/';
   const [redirectToReferrer, setRedirectToReferrer] = useState(false)
@@ -65,14 +64,14 @@ const Forms = (props) => {
             })
   }
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();  
+  const handleLoginSubmit = (credentials) => {
+    // e.preventDefault();  
     setCredentials({
       email: 'oyefesotunmise@gmail.com',
       password: 'okototesting'
     })
     context.fakelogin = (credentials) => {
-      console.log('CREDENTIALS',credentials)
+      console.log('CREDENTIALS',credentials.password)
     }
 
         // .then(() => this.clearInputs(e))
@@ -166,7 +165,7 @@ const Forms = (props) => {
             <div
               className={styles.formContainer + " " + styles.signInContainer}
             >
-              <form action="#" onSubmit={(e) => handleLoginSubmit(e)}>
+              <form action="#" onSubmit={() => handleLoginSubmit(credentials)}>
                 <h1>Sign in</h1>
                 <div className={styles.socialContainer}>
                   {/* <a href="#" className="social"><FontAwesomeIcon icon="Facebook"/></a>

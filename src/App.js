@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import { AuthContext } from "./context/auth";
+// import { AuthContext } from "./context/auth";
 import PrivateRoute from './context/privateroutes'
 import HomePage from './pages/homepage/homePage';
 import TournamentPage from './pages/tournaments/tournament';
@@ -9,6 +9,8 @@ import newsPage from './pages/newspage/newspage';
 import SignUpLogin from './pages/SignUpLogin/forms';
 import aboutPage from './pages/aboutpage/aboutpage'
 import axios from 'axios';
+
+export const AuthContext = React.createContext();
 
 const App = (props) => {
   
