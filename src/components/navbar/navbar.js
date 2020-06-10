@@ -6,6 +6,8 @@ import Instagram from "../../assets/img/instagram.png";
 import Twitter from "../../assets/img/twitter.png";
 import Youtube from "../../assets/img/youtube.png";
 import SideBar from './sideBar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import './navbar.scss';
 
 const NavBar = (props) => {
@@ -84,8 +86,14 @@ const NavBar = (props) => {
           ABOUT
           </Link>
         
-            <Link id="nav-button" className="w3-bar-item w3-right" onClick={props.logout}>SIGN OUT</Link>
-
+            {/* <Link id="nav-button" className="w3-bar-item w3-right" onClick={props.logout}>SIGN OUT</Link> */}
+            <Link id="socials profile" to="/" style={{marginTop: '1.1'+'%'}} className="w3-bar-item w3-right w3-dropdown-hover" >
+              <FontAwesomeIcon style={{fontSize: '35'+'px'}} icon={faUserCircle} />
+                <div className="w3-dropdown-content w3-bar-block w3-card-4" style={{position: 'fixed', marginLeft: '-45'+'px'}}>
+                  <Link href="#" className="w3-bar-item w3-button">Profile</Link>
+                  <Link href="#" className="w3-bar-item w3-button">Logout</Link>
+                </div>
+            </Link>
             <Link id="socials" to="/"  className="w3-bar-item w3-right" > <img alt="instagram logo" src={Instagram} /></Link>
             <Link id = "socials" className="w3-bar-item w3-right" to="/auth"> <img alt="twitter logo" src={Twitter} /></Link>
 

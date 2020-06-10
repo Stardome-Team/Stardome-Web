@@ -21,7 +21,7 @@ const Forms = (props) => {
   const [newUsername, setNewUsername] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
-  const [authTokens, setAuthTokens] = useState(localStorage.getItem("token"))
+  const {authTokens, setAuthTokens} = contxt
 
   const clearInputs = () => {
     setEmail('')
@@ -70,7 +70,7 @@ const Forms = (props) => {
       email: 'oyefesotunmise@gmail.com',
       password: 'okototesting'
     })
-    contxt.fakelogin = (credentials) => {
+    contxt.logout = (credentials) => {
       console.log('CREDENTIALS',credentials.password)
     }
 
