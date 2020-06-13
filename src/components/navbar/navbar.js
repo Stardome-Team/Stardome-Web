@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
+import {AuthContext} from "../../App";
 import Logo from "../../assets/img/stardome_logo.png";
 import Facebook from "../../assets/img/facebook.png";
 import Instagram from "../../assets/img/instagram.png";
@@ -11,6 +12,9 @@ import {faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import './navbar.scss';
 
 const NavBar = (props) => {
+
+  const contxt = React.useContext(AuthContext)
+
   const [showHideSidebar, setShowHideSidebar] = useState(false)
 
   const hideComponent = (name) => {
@@ -91,7 +95,7 @@ const NavBar = (props) => {
               <FontAwesomeIcon style={{fontSize: '35'+'px'}} icon={faUserCircle} />
                 <div className="w3-dropdown-content w3-bar-block w3-card-4" style={{position: 'fixed', marginLeft: '-45'+'px'}}>
                   <Link href="#" className="w3-bar-item w3-button">Profile</Link>
-                  <Link href="#" className="w3-bar-item w3-button">Logout</Link>
+                  <Link href="#" onClick={contxt.logout} className="w3-bar-item w3-button">Logout</Link>
                 </div>
             </Link>
             <Link id="socials" to="/"  className="w3-bar-item w3-right" > <img alt="instagram logo" src={Instagram} /></Link>

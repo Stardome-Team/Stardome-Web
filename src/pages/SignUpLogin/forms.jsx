@@ -70,7 +70,7 @@ const Forms = (props) => {
       email: 'oyefesotunmise@gmail.com',
       password: 'okototesting'
     })
-    contxt.logout = (credentials) => {
+    contxt.fakelogin = (credentials) => {
       console.log('CREDENTIALS',credentials.password)
     }
 
