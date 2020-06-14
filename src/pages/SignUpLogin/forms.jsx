@@ -17,7 +17,7 @@ const Forms = (props) => {
   const [errorMessage, setErrorMessage] = useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [credentials, setCredentials] = useState({})
+  const [credentials, setCredentials] = useState({email: "", password: ""})
   const [newUsername, setNewUsername] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -64,22 +64,14 @@ const Forms = (props) => {
             })
   }
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();  
-    setCredentials({
-      email: 'oyefesotunmise@gmail.com',
-      password: 'okototesting'
-    })
-    contxt.fakelogin = (credentials) => {
-      console.log('CREDENTIALS',credentials.password)
-    }
-
+  const handleLoginSubmit = (e) => { 
+    e.preventDefault(); 
+    contxt.fakelogin(credentials)
         // .then(() => this.clearInputs(e))
         // .catch(err => {
         //     setErrorMessage(err.data)
         // })
   }
-
     return (
       <div className={styles.bg}>
       <NavBar />
