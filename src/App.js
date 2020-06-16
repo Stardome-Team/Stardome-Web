@@ -52,7 +52,7 @@ const App = (props) => {
   const fakeLogin = (credentials) => {
     const token = '123test'
     localStorage.setItem("token", token);
-    localStorage.setItem("user", credentials);
+    localStorage.setItem("user", credentials.email);
     setAuthTokens(token)
     console.log(user)
     console.log(token)
