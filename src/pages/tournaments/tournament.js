@@ -1,54 +1,46 @@
-import React ,{ Component } from 'react';
+import React ,{ useState } from 'react';
 import './tournament.scss';
 import NavBar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
 import Tabs from '../../components/Tabs/Tabs';
 import Upcoming from '../../components/UpComing/UpComing';
-import EventSchedule from '../../components/eventSchedule/eventSchedule';
+import EventList from '../../components/eventSchedule/EventList';
+import SCHEDULE from '../../components/schedule.data'
 
-class TournamentPage extends Component
+const TournamentPage = () =>
 {
-    state = 
+    const [showUpComing, setShowUpComing] = useState(true)
+    const [showTourn, setShowTourn] = useState(false)
+    const [events, setEvents] = useState(SCHEDULE[0].event)
+
+    const toggleShowUpComing = () =>
     {
-        showUpComing:true,
-        showTourn:false
+        setShowUpComing(true)
+        setShowTourn(false)
     }
 
-    toggleShowUpComing = () =>
+    const toggleShowTourn = () =>
     {
-        this.setState({
-            showUpComing:true,
-            showTourn:false
-        });
+        setShowUpComing(false)
+        setShowTourn(true)
     }
-
-    toggleShowTourn = () =>
-    {
-        this.setState({
-            showUpComing:false,
-            showTourn:true
-        });
-    }
-
-    render()
-    {
-        const upCom = this.state.showUpComing ? <Upcoming /> : <EventSchedule/>
+        
+    const upCom = showUpComing ? <Upcoming /> : <EventList events={events}/>
         
         return (
             <>
             <div className="bg">
                 <NavBar/>
                 <Tabs 
-                   showUpComing={this.toggleShowUpComing}
-                   showTourn={this.toggleShowTourn}
-                   isTourn={this.state.showTourn} 
-                   isUpcoming={this.state.showUpComing} />
+                   showUpComing={toggleShowUpComing}
+                   showTourn={toggleShowTourn}
+                   isTourn={showTourn} 
+                   isUpcoming={showUpComing} />
                 { upCom }
                 <Footer/>
             </div>
             </>
         );
-    }
 }
 
 export default TournamentPage;

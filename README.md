@@ -4,18 +4,23 @@
 [![License](https://img.shields.io/npm/l/udacimak.svg)](https://github.com/blac-panda/stardome-web/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/blac-panda/stardome-web/README.md)
 
-[![Opened issues](https://img.shields.io/github/issues-raw/blac-panda/stardome-web.svg)](https://github.com/blac-panda/stardome-webk/issues)
-[![Closed issues](https://img.shields.io/github/issues-closed-raw/blac-panda/stardome-web.svg)](https://github.comblac-panda/stardome-web/issues?q=is%3Aissue+is%3Aclosed)
-[![Opened pull requests](https://img.shields.io/github/issues-pr-raw/blac-panda/stardome-web.svg)](https://github.com/blac-panda/stardome-web/pulls)
-[![Closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/blac-panda/stardome-web.svg)](https://github.com/blac-panda/stardome-web/pulls?q=is%3Apr+is%3Aclosed)
+[![Opened issues](https://img.shields.io/github/issues-raw/stardome-team/stardome-web.svg)](https://github.com/stardome-team/stardome-web/issues)
+[![Closed issues](https://img.shields.io/github/issues-closed-raw/stardome-team/stardome-web.svg)](https://github.com/stardome-team/stardome-web/issues?q=is%3Aissue+is%3Aclosed)
+[![Opened pull requests](https://img.shields.io/github/issues-pr-raw/stardome-team/stardome-web.svg)](https://github.com/stardome-team/stardome-web/pulls)
+[![Closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/stardome-team/stardome-web.svg)](https://github.com/stardome-team/stardome-web/pulls?q=is%3Apr+is%3Aclosed)
 
 Stardome is a social networking site for organizing gaming tournaments and meeting other gamers.
-
-Stardome was created to help me get into my 100DaysofCode groove and I had actually created the UI a long time ago.
 
 Feel free to contribute.
 
 I will be making use of ReactJS, Sass and GoLang
+
+# Getting Started
+Run ```npm install```
+
+Run ```npm start```
+
+Go to http://localhost:3000/
 
 # UI
 Here is a link to the UI design I will be following: 

@@ -1,6 +1,5 @@
 
 .container{
-    margin-top: 70px;
     width: fit-content;
     display: block;
     margin-left: auto;
@@ -72,6 +71,9 @@
         display: flow-root;
     }
     &.name{
+        color: #EC4E20;
+    }
+    &.list{
         color: #EC4E20;
     }
     

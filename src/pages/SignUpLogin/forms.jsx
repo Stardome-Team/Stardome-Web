@@ -1,36 +1,77 @@
-import React, { Component } from "react";
+import React, { useState , useContext } from "react";
+import {AuthContext} from "../../App";
+import { Redirect } from "react-router-dom";
 import styles from "./forms.module.css";
 import NavBar from '../../components/navbar/navbar';
-import Footer from '../../components/footer/footer'
+import Footer from '../../components/footer/footer';
 
-class Forms extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      signUp: false,
-      signIn: true,
-    };
+const Forms = (props) => {
+
+  const contxt = React.useContext(AuthContext)
+
+  // const referer = props.location.state.referer || '/';
+  const [redirectToReferrer, setRedirectToReferrer] = useState(false)
+
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [credentials, setCredentials] = useState({email: "", password: ""})
+  const [newUsername, setNewUsername] = useState("");
+  const [newEmail, setNewEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const {authTokens, setAuthTokens} = contxt
+
+  const clearInputs = () => {
+    setEmail('')
+    setPassword('')
+    setErrorMessage('')
+  }
+  
+  const [signIn, setSignIn] = useState(true)
+  const [signUp, setSignUp] = useState(false)
+  
+  
+  if (isLoggedIn) {
+    setRedirectToReferrer(true)
+  } 
+  
+  const from = props.location.state || { from: { pathname: '/' } }
+
+  if (redirectToReferrer === true) {
+    return <Redirect to={from} />
   }
 
-  showSignUp = (e) => {
+  const showSignUp = (e) => {
     e.preventDefault();
-    this.setState({
-      signUp: true,
-      signIn: false,
-    });
+    setSignIn(false);
+    setSignUp(true);
   };
 
-  showSignIn = (e) => {
+  const showSignIn = (e) => {
     e.preventDefault();
-    this.setState({
-      signUp: false,
-      signIn: true,
-    });
+    setSignIn(true);
+    setSignUp(false);
   };
 
-  render() {
-    const { signIn, signUp } = this.state;
+  const handleSignUpSubmit = (e) => {
+    e.preventDefault();
+        props.signup(this.state)
+            .then(() => this.clearInputs())
+            .catch(err => {
+                setErrorMessage(err.data)
+            })
+  }
 
+  const handleLoginSubmit = (e) => { 
+    e.preventDefault(); 
+    contxt.fakelogin(credentials)
+        // .then(() => this.clearInputs(e))
+        // .catch(err => {
+        //     setErrorMessage(err.data)
+        // })
+  }
     return (
       <div className={styles.bg}>
       <NavBar />
@@ -40,7 +81,7 @@ class Forms extends Component {
             <div
               className={styles.formContainer + " " + styles.signUpContainer}
             >
-              <form action="#">
+              <form action="#" onSubmit={(e) => handleSignUpSubmit(e)}>
                 <h1>Create Account</h1>
                 <div className={styles.socialContainer}>
                   {/* <a href="#" className="social"><FontAwesomeIcon icon="faFacebookF"/></a>
@@ -48,17 +89,41 @@ class Forms extends Component {
 				<a href="#" className="social"><FontAwesomeIcon icon="LinkedIn"/></a> */}
                 </div>
                 <span>or use your email for registration</span>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input 
+                  type="text" 
+                  placeholder="username" 
+                  value={email}
+                  onChange={e => {
+                    setNewUsername(e.target.value);
+                  }}
+                />
+                <input 
+                  type="email" 
+                  placeholder="Email" 
+                  value={email}
+                  onChange={e => {
+                    setNewEmail(e.target.value);
+                  }}
+                />
+                <input 
+                  type="password" 
+                  placeholder="Password" 
+                  value={email}
+                  onChange={e => {
+                    setNewPassword(e.target.value);
+                  }}
+                />
                 <button>Sign Up</button>
               </form>
-            
+              {
+                errorMessage &&
+                <p style={{color: "red"}}>{errorMessage}</p>
+              }
 			
               <div className={styles.hiddenLarge}>
                 <p>Have an account ? </p>
                 <button
-                  onClick={(e) => this.showSignIn(e)}
+                  onClick={(e) => showSignIn(e)}
                 >
                   Sign In
                 </button>
@@ -77,7 +142,7 @@ class Forms extends Component {
                   <button
                     className={styles.ghost}
                     id="signIn"
-                    onClick={(e) => this.showSignIn(e)}
+                    onClick={(e) => showSignIn(e)}
                   >
                     Sign In
                   </button>
@@ -92,7 +157,7 @@ class Forms extends Component {
             <div
               className={styles.formContainer + " " + styles.signInContainer}
             >
-              <form action="#">
+              <form action="#" onSubmit={(e) => handleLoginSubmit(e)}>
                 <h1>Sign in</h1>
                 <div className={styles.socialContainer}>
                   {/* <a href="#" className="social"><FontAwesomeIcon icon="Facebook"/></a>
@@ -100,16 +165,38 @@ class Forms extends Component {
 					<a href="#" className="social"><FontAwesomeIcon icon="LinkedIn"/></a> */}
                 </div>
                 <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input 
+                  type="email"  
+                  placeholder="Email"
+                  value={email}
+                  onChange={e => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <input 
+                  type="password" 
+                  value={password}
+                  onChange={e => {
+                    setPassword(e.target.value);
+                  }} 
+                  placeholder="Password" 
+                />
                 <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                {/* {!authTokens ? */}
+                <button type="submit">Sign In</button>
+                {/* // : <button onClick={() => contxt.logout}>Logout</button> */}
+                {/* } */}
               </form>
+
+              {
+                errorMessage &&
+                <p style={{color: "red"}}>{errorMessage}</p>
+              }
 
               <div className={styles.hiddenLarge}>
                 <p>No Account ? </p>
                 <button
-                  onClick={(e) => this.showSignUp(e)}
+                  onClick={(e) => showSignUp(e)}
                 >
                   Sign Up
                 </button>
@@ -125,7 +212,7 @@ class Forms extends Component {
                   <p>Enter your personal details and start journey with us</p>
                   <button
                     className={styles.ghost}
-                    onClick={(e) => this.showSignUp(e)}
+                    onClick={(e) => showSignUp(e)}
                   >
                     Sign Up
                   </button>
@@ -139,6 +226,5 @@ class Forms extends Component {
     </div>
     );
   }
-}
 
 export default Forms;

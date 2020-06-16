@@ -1,6 +1,6 @@
 const SCHEDULE = [
   {
-    event: [ 
+    event: [
       {
         name: "Call of Duty Lagos Regionals 2020",
         id: 158,

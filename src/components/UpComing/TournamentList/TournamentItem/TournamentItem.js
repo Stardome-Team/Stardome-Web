@@ -1,46 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink } from "react-router-dom";
 import "./TournamentItem.scss";
 import Participate from "./participate"
 
-export default class TournamentItem extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = 
-        {
-            showParticipate:false
-        }
-        this.toggleShowParticipate = this.toggleShowParticipate.bind(this);
-    }
+const TournamentItem = (props) => {
 
-    toggleShowParticipate = () =>
+    const [showParticipate, setShowParticipate] = useState(false)
+
+    const toggleShowParticipate = () =>
     {
-        this.setState((state) => ({
-            showParticipate: !state.showParticipate
-        }));
+        setShowParticipate(prevState => !prevState)
     }
 
-    render() {
-        const {showParticipate} = this.state;
         return (
             <div className="Event">
 
             <div className="Details">
 
-            <p className="Title">{this.props.name}</p>
+            <p className="Title">{props.name}</p>
             <p>Details of events</p>
-            <p>{this.props.slots} slots</p>
-            {showParticipate && <Participate setChanged={this.toggleShowParticipate}/>}
+            <p>{props.slots} slots</p>
+            {showParticipate && <Participate setChanged={toggleShowParticipate}/>}
             </div>
 
             
             <div>
-                <a onClick={() => this.toggleShowParticipate("showParticipate")}>
+                <a onClick={toggleShowParticipate}>
                     Participate
                 </a>
             </div>
              
             </div>
         );
-    }
 }
+
+export default TournamentItem

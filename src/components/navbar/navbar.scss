@@ -24,10 +24,7 @@
     border-bottom: #EC4E20;
     border-bottom-style: solid;
 }
-// #nav-links:hover{
-//     border-bottom: #EC4E20;
-//     border-bottom-style: solid;
-// }
+
 #nav-button{
     margin-top: 1.4%;
     background-color: #457FFF;
@@ -36,6 +33,20 @@
     font-family: Trebuchet MS;
     margin-right: 32px;
     margin-left: 16px;
+    &:hover{
+        background-color: #457FFF;
+        opacity: 0.8;
+    }
+}
+
+#socials{
+    &:hover{
+        opacity: 0.8;
+        background-color: rgb(124, 121, 121);
+    }
+    &:profile:hover{
+        opacity: 0.8;
+    }
 }
 
 #sidebar-button{

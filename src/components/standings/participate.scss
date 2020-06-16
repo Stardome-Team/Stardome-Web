@@ -1,0 +1,39 @@
+//Styling for the pop up
+#close-button{
+    border-top-right-radius: 10px;
+    background: none;
+}
+
+#back-layer{
+    border-radius: 10px;
+}
+#popup-header{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.popup-header-text{
+    color: black;
+    font-family: 'Roboto Condensed';
+}
+
+.league-table{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    color: #000000;
+    align-content: center;
+    background: #c4c4c4;
+}
+
+.table-centered{
+    text-align: center;
+    font-size: larger;
+}
+
+#qualifier{
+    color: green;
+}
+
+#table-header{
+    border-bottom: solid;
+}
