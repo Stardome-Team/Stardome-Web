@@ -71,7 +71,8 @@ const App = (props) => {
       signup: postSignUp,
       login: postLogin,
       fakelogin: fakeLogin,
-      logout: logout
+      logout: logout,
+      authTokens
       }}>
       {/* <Forms/> */}
       <Router>

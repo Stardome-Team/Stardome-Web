@@ -35,7 +35,7 @@ const NavBar = (props) => {
 
           
           {
-          props.authTokens ?
+          !contxt.authTokens ?
           <React.Fragment>
             <Link className="w3-bar-item move-nav" style={{ textDecoration: "none" }} to="/">
             HOME

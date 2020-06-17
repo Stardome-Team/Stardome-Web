@@ -68,10 +68,10 @@ const Forms = (props) => {
     e.preventDefault(); 
     const credentials = {email, password}
     contxt.fakelogin(credentials)
-        // .then(() => this.clearInputs(e))
-        // .catch(err => {
-        //     setErrorMessage(err.data)
-        // })
+    clearInputs()
+    // setLoggedIn(true)
+    props.history.push("/events")
+    console.log(contxt.authTokens)
   }
     return (
       <div className={styles.bg}>
