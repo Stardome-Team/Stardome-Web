@@ -91,7 +91,7 @@ const NavBar = (props) => {
           </Link>
         
             {/* <Link id="nav-button" className="w3-bar-item w3-right" onClick={props.logout}>SIGN OUT</Link> */}
-            <Link id="socials profile" to="/" style={{marginTop: '1.1'+'%'}} className="w3-bar-item w3-right w3-dropdown-hover" >
+            <Link id="socials profile" href="#" style={{marginTop: '1.1'+'%'}} className="w3-bar-item w3-right w3-dropdown-hover" >
               <FontAwesomeIcon style={{fontSize: '35'+'px'}} icon={faUserCircle} />
                 <div className="w3-dropdown-content w3-bar-block w3-card-4" style={{position: 'fixed', marginLeft: '-45'+'px'}}>
                   <Link href="#" className="w3-bar-item w3-button">Profile</Link>

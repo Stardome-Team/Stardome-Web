@@ -9,9 +9,6 @@ const Forms = (props) => {
 
   const contxt = React.useContext(AuthContext)
 
-  // const referer = props.location.state.referer || '/';
-  const [redirectToReferrer, setRedirectToReferrer] = useState(false)
-
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -33,13 +30,9 @@ const Forms = (props) => {
   const [signUp, setSignUp] = useState(false)
   
   
-  if (isLoggedIn) {
-    setRedirectToReferrer(true)
-  } 
-  
-  const from = props.location.state || { from: { pathname: '/' } }
+  const {from} = props.location.state || { from: { pathname: '/' } }
 
-  if (redirectToReferrer === true) {
+  if (isLoggedIn === true) {
     return <Redirect to={from} />
   }
 
@@ -69,8 +62,8 @@ const Forms = (props) => {
     const credentials = {email, password}
     contxt.fakelogin(credentials)
     clearInputs()
-    // setLoggedIn(true)
-    props.history.push("/events")
+    setLoggedIn(true)
+    // props.history.push("/events")
     console.log(contxt.authTokens)
   }
     return (
@@ -94,6 +87,7 @@ const Forms = (props) => {
                   type="text" 
                   placeholder="username" 
                   value={email}
+                  required
                   onChange={e => {
                     setNewUsername(e.target.value);
                   }}
@@ -102,6 +96,7 @@ const Forms = (props) => {
                   type="email" 
                   placeholder="Email" 
                   value={email}
+                  required
                   onChange={e => {
                     setNewEmail(e.target.value);
                   }}
@@ -110,6 +105,7 @@ const Forms = (props) => {
                   type="password" 
                   placeholder="Password" 
                   value={email}
+                  required
                   onChange={e => {
                     setNewPassword(e.target.value);
                   }}
@@ -170,6 +166,7 @@ const Forms = (props) => {
                   type="email"  
                   placeholder="Email"
                   value={email}
+                  required
                   onChange={e => {
                     setEmail(e.target.value);
                   }}
@@ -177,6 +174,7 @@ const Forms = (props) => {
                 <input 
                   type="password" 
                   value={password}
+                  required
                   onChange={e => {
                     setPassword(e.target.value);
                   }} 
