@@ -1,5 +1,7 @@
 import React , { useState } from 'react'
 import EventSchedule from "./eventSchedule"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faCaretLeft, faCaretRight} from '@fortawesome/free-solid-svg-icons';
 import './eventSchedule.scss';
 
 const EventList = ({events}) =>  {
@@ -13,13 +15,13 @@ const EventList = ({events}) =>  {
     const decrementWeekClicked = () =>  {
         setWeekCount(prevState => prevState-1)
       }
-      
+       
     return (      
         <div className="container">
             <div className="week-counter">
-                <i style={{fontSize: "xxx-large"}} onClick={decrementWeekClicked} class="fas fa-caret-left"></i>
+            <FontAwesomeIcon style={{fontSize: "xxx-large"}} onClick={decrementWeekClicked} icon={faCaretLeft}/>
                     <div className="week-counter display">Week {weekCount}</div>
-                <i style={{fontSize: "xxx-large"}} onClick={incrementWeekClicked} class="fas fa-caret-right"></i>
+            <FontAwesomeIcon style={{fontSize: "xxx-large"}} onClick={incrementWeekClicked} icon={faCaretRight}/>
             </div>
             <EventSchedule />
         </div>

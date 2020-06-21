@@ -7,7 +7,8 @@ const SCHEDULE = [
         slots: 64,
         date: "2020-04-29T10:00:00.000Z",
         description: "Regional finals for Lagos State Call of Duty Championship, covers all zone 2 area. Yaba, Akoka, all these an okoto yarns.",
-        week: 1
+        week: 1, 
+        streamUrl: "https://www.youtube.com"
       },
       {
         name: "Call of Duty Lagos Regionals 2020",
@@ -15,7 +16,8 @@ const SCHEDULE = [
         slots: 64,
         date: "2020-04-29T10:00:00.000Z",
         description: "Regional finals for Lagos State Call of Duty Championship, covers all zone 2 area. Yaba, Akoka, all these an okoto yarns.",
-        week: 1
+        week: 1, 
+        streamUrl: "https://www.youtube.com"
       },
       {
         name: "Call of Duty Lagos Regionals 2020",
@@ -23,7 +25,8 @@ const SCHEDULE = [
         slots: 64,
         date: "2020-04-29T10:00:00.000Z",
         description: "Regional finals for Lagos State Call of Duty Championship, covers all zone 2 area. Yaba, Akoka, all these an okoto yarns.",
-        week: 1
+        week: 1, 
+        streamUrl: "https://www.youtube.com"
       },
       {
         name: "Call of Duty Lagos Regionals 2020",
@@ -31,7 +34,8 @@ const SCHEDULE = [
         slots: 64,
         date: "2020-04-29T10:00:00.000Z",
         description: "Regional finals for Lagos State Call of Duty Championship, covers all zone 2 area. Yaba, Akoka, all these an okoto yarns.",
-        week: 1
+        week: 1, 
+        streamUrl: "https://www.youtube.com"
       },
       {
         name: "Call of Duty Lagos Regionals 2020",
@@ -39,7 +43,8 @@ const SCHEDULE = [
         slots: 64,
         date: "2020-04-29T10:00:00.000Z",
         description: "Regional finals for Lagos State Call of Duty Championship, covers all zone 2 area. Yaba, Akoka, all these an okoto yarns.",
-        week: 1
+        week: 1, 
+        streamUrl: "https://www.youtube.com"
       },
       {
         name: "Call of Duty Lagos Regionals 2020",
@@ -47,7 +52,8 @@ const SCHEDULE = [
         slots: 64,
         date: "2020-04-29T10:00:00.000Z",
         description: "Regional finals for Lagos State Call of Duty Championship, covers all zone 2 area. Yaba, Akoka, all these an okoto yarns.",
-        week: 1
+        week: 1, 
+        streamUrl: "https://www.youtube.com"
       }
     ]
   }
