@@ -37,14 +37,14 @@ function SideBar() {
           </div>
 
           <div>
-            <a href="#" className="w3-bar-item" id="sidebar-nav-links">
+          <Link className="w3-bar-item" style={{ textDecoration: "none" }} to="/events">
               TOURNAMENTS
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="#" className="w3-bar-item" id="sidebar-nav-links">
+          <Link className="w3-bar-item" style={{ textDecoration: "none" }} to="/#">
               MATCH SCHEDULES
-            </a>
+            </Link>
           </div>
 
           <div>
@@ -59,9 +59,9 @@ function SideBar() {
           </div>
 
           <div>
-            <a href="#" className="w3-bar-item" id="sidebar-nav-links">
+          <Link className="w3-bar-item" style={{ textDecoration: "none" }} to="/about">
               ABOUT
-            </a>
+            </Link>
           </div>
         </div>
       </div>
