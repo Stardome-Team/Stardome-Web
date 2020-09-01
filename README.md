@@ -16,11 +16,6 @@ Feel free to contribute.
 I will be making use of ReactJS, Sass and GoLang
 
 # Getting Started
-Run ```npm install```
-
-Run ```npm start```
-
-## For Linux OS
 Clone this repository
 
 Delete the  **package-lock.json** file
