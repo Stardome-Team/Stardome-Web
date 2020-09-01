@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import {AuthContext} from './context/auth'
 
 ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PORT}>
       <App />
     </BrowserRouter>,
   document.getElementById('root')
